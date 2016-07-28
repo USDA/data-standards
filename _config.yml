@@ -9,7 +9,7 @@ baseurl: "https://usda.github.io/data-standards"
 #url: "http://acrsi.usda.gov" # the base hostname & protocol for your site
 twitter_username: usda
 github_username:  usda
-org_name: bbrotsos
+org_name: usda
 repo_name: data-standards
 
 # Build settings
