@@ -238,7 +238,7 @@
 	</xs:complexType>
 
 
-	<xs:element name="CropYear" type="niem-xs:integer" nillable="true">
+	<xs:element name="CropYear" type="ag_codes:CropYearType" nillable="true">
 		<xs:annotation>
 			<xs:documentation>A period of time (in year) within which the crop is normally grown and designated by the calendar year in which the crop is normally harvested.
 				For crops:
@@ -250,16 +250,17 @@
 		</xs:annotation>
 	</xs:element>
 
-	<xs:element name="OriginatorIdentificationID" type="niem-xs:string" nillable="true">
+	<xs:element name="OriginatorIdentificationID" type="ag_codes:OriginatorIdentificationIDType" nillable="true">
 		<xs:annotation>
-			<xs:documentation>An identification of the entity responsible for originating/publishing data.
+			<xs:documentation>
+				An identification of the entity responsible for originating/publishing data.
 				For Acreage Reporting it identifies the FSA Service Center, Approved Insurance Provider (AIP), or Third Party Site which collected and published the acreage data and any accompanying geospatial data.
 				The identification consists of a prefix indicating the type of Originator, followed by an  identification that uniquely identifies the Originator for that type.
 			</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 
-	<xs:element name="FileCustomerIdentifier" type="niem-xs:integer" nillable="true">
+	<xs:element name="FileCustomerIdentifier" type="ag_codes:FileCustomerIdentifierType" nillable="true">
 		<xs:annotation>
 			<xs:documentation>An internal identifier uniquely identifying a customer within a specific file. Each unique customer within a given file will have a unique File Customer Identifier. File Customer Identifier values are not unique across files.</xs:documentation>
 		</xs:annotation>
@@ -273,7 +274,7 @@
 		</xs:annotation>
 	</xs:element>
 
-	<xs:element name="TaxIdentificationID" type="niem-xs:string" nillable="true">
+	<xs:element name="TaxIdentificationID" type="ag_codes:TaxIdentificationIDType" nillable="true">
 		<xs:annotation>
 			<xs:documentation>A tax identification assigned to a specific individual, business or other entity and is used to authenticate the individual/entity for matters of taxation and other federal governement business.
 				Tax Identification may be a Social Security or Employer Identification number.
@@ -314,7 +315,7 @@
 		</xs:annotation>
 	</xs:element>
 
-	<xs:element name="FarmNumberID" type="niem-xs:string" nillable="true">
+	<xs:element name="FarmNumberID" type="ag_codes:FarmNumberIDType" nillable="true">
 		<xs:annotation>
 			<xs:documentation>An identification number assigned to all land under control of a particular operator within a particular county.
 				Each County assigns Farm Numbers independently. As a result, farms in different counties might be assigned the same Farm Number; i.e, a Farm Number might be unique only within a particular county. Thus, to uniquely identify a farm, the State FSA Code and County FSA Code must be specified in combination with the Farm Number.
@@ -328,9 +329,9 @@
 		</xs:annotation>
 	</xs:element>
 
-	<xs:element name="TractNumberID" type="niem-xs:string" nillable="true">
+	<xs:element name="TractNumberID" type="ag_codes:TractNumberIDType" nillable="true">
 		<xs:annotation>
-			<xs:documentation>An identification number assigned to a unit of contiguous land that is under one ownership and that is operated as a farm or part of a farm.  An owner is a person or business having deed to the land.
+			<xs:documentation>An identification number assigned to a unit of contiguous land that is under one ownership and that is operated as a farm or part of a farm. An owner is a person or business having deed to the land.
 				Tract numbers are assigned by an FSA county office, and are unique within that office''s farms. A Tract Number is used in conjunction with a State FSA Code and County FSA Code for uniqueness.
 				Tract numbers are not necessarily unique based upon State ANSI Code and County ANSI in instance where the ANSI codes are not the same as the FSA codes.
 			</xs:documentation>
@@ -343,7 +344,7 @@
 		</xs:annotation>
 	</xs:element>
 
-	<xs:element name="FieldNumberID" type="niem-xs:string" nillable="true">
+	<xs:element name="FieldNumberID" type="ag_codes:FieldNumberIDType" nillable="true">
 		<xs:annotation>
 			<xs:documentation>An identification number assigned to a field of land that is part of a farm tract.
 				Field numbers are assigned by an FSA county office, and are unique within that office''s farms. A Field Number is used in conjunction with Tract Number, State FSA Code and County FSA Code for uniqueness.
@@ -352,7 +353,7 @@
 		</xs:annotation>
 	</xs:element>
 
-	<xs:element name="CLUIdentifierID" type="niem-xs:string" nillable="true">
+	<xs:element name="CLUIdentifierID" type="ag_codes:CLUIdentifierIDType" nillable="true">
 		<xs:annotation>
 			<xs:documentation>A system-generated internal identifier of a common land unit (CLU). This identifier is for internal access use only.
 				A CLU is the smallest unit of land that has a permanent, contiguous boundary, common land cover and land management, a common owner, and a common producer association.
@@ -374,9 +375,9 @@
 		</xs:annotation>
 	</xs:element>
 
-	<xs:element name="SubfieldNumber" type="niem-xs:string" nillable="true">
+	<xs:element name="SubfieldNumber" type="ag_codes:SubfieldNumberType" nillable="true">
 		<xs:annotation>
-			<xs:documentation>An alpha 'number' that is used to uniquely identify a subfield within a field, within a tract within a farm within a state and county. Subfields are areas of a field that share a set of common planting characteristic in terms of crop, crop type, intended use, etc. By convention the first defined subfield is given a value of 'A', with subsequent subfields following in alphabetic order.</xs:documentation>
+			<xs:documentation>An alpha number that is used to uniquely identify a subfield within a field, within a tract within a farm within a state and county. Subfields are areas of a field that share a set of common planting characteristic in terms of crop, crop type, intended use, etc. By convention the first defined subfield is given a value of 'A', with subsequent subfields following in alphabetic order.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 
@@ -416,19 +417,13 @@
 		</xs:annotation>
 	</xs:element>
 
-	<xs:element name="OriginalReportedAcreage" type="niem-xs:decimal" nillable="true">
+	<xs:element name="OriginalReportedAcreage" type="ag_codes:OriginalReportedAcreageType" nillable="true">
 		<xs:annotation>
 			<xs:documentation>An original, unmodified, number of acres that were reported.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 
-	<xs:element name="OriginalReportedAcreage1" type="niem-xs:decimal" nillable="true">
-		<xs:annotation>
-			<xs:documentation>An original, unmodified, number of acres that were reported.</xs:documentation>
-		</xs:annotation>
-	</xs:element>
-
-	<xs:element name="FinalReportedAcreage" type="niem-xs:decimal" nillable="true">
+	<xs:element name="FinalReportedAcreage" type="ag_codes:FinalReportedAcreageType" nillable="true">
 		<xs:annotation>
 			<xs:documentation>A final number of acres that were reported.</xs:documentation>
 		</xs:annotation>
@@ -440,13 +435,13 @@
 		</xs:annotation>
 	</xs:element>
 
-	<xs:element name="ReportedAcreageModifiedReasonCode" type="ag_codes:ReportedAcreageModifiedReasonCodeType" nillable="false">
+	<xs:element name="ReportedAcreageModifiedReasonCode" type="ag_codes:ReportedAcreageModifiedReasonCodeType" nillable="true">
 		<xs:annotation>
 			<xs:documentation>A reason code identifying the reason that the reported acreage was modified from its original value.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 
-	<xs:element name="ReportedAcreageModifiedOtherReasonText" type="nc:TextType" nillable="true">
+	<xs:element name="ReportedAcreageModifiedOtherReasonText" type="ag_codes:ReportedAcreageModifiedOtherReasonTextType" nillable="true">
 		<xs:annotation>
 			<xs:documentation>An other reason code identifying the reason that the reported acreage was modified from its original value.</xs:documentation>
 		</xs:annotation>
@@ -482,7 +477,7 @@
 		</xs:annotation>
 	</xs:element>
 
-	<xs:element name="PlantedDateModifiedOtherReasonText" type="nc:TextType" nillable="true">
+	<xs:element name="PlantedDateModifiedOtherReasonText" type="ag_codes:PlantedDateModifiedOtherReasonTextType" nillable="true">
 		<xs:annotation>
 			<xs:documentation>A free form text providing the reason that a planted date was modified from its original value when a reason other than the possible list of provided reasons is needed.</xs:documentation>
 		</xs:annotation>
@@ -512,7 +507,7 @@
 		</xs:annotation>
 	</xs:element>
 
-	<xs:element name="ProducerSharePercent" type="niem-xs:decimal" nillable="true">
+	<xs:element name="ProducerSharePercent" type="ag_codes:ProducerSharePercentType" nillable="true">
 		<xs:annotation>
 			<xs:documentation>A Producer''s share of a crop and the benefits coming from that crop, expressed as a percentage.</xs:documentation>
 		</xs:annotation>
@@ -536,7 +531,7 @@
 		</xs:annotation>
 	</xs:element>
 
-	<xs:element name="GeospatialShapeModifiedOtherReasonText" type="nc:TextType" nillable="true">
+	<xs:element name="GeospatialShapeModifiedOtherReasonText" type="ag_codes:GeospatialShapeModifiedOtherReasonTextType" nillable="true">
 		<xs:annotation>
 			<xs:documentation>A free form text providing the reason that a geospatial shape was modified from its original form when a reason other than the possible list of provided reasons is needed.</xs:documentation>
 		</xs:annotation>
@@ -560,7 +555,7 @@
 		</xs:annotation>
 	</xs:element>
 
-	<xs:element name="MICSName" type="nc:TextType" nillable="true">
+	<xs:element name="MICSName" type="ag_codes:MICSNameType" nillable="true">
 		<xs:annotation>
 			<xs:documentation>A code name identifying the Mobile Implement Control System (MICS) used in the collection of geospatial data.</xs:documentation>
 		</xs:annotation>
@@ -589,7 +584,19 @@
 			<xs:documentation>A geometry collection that includes one or more Polygons or Surfaces.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
-	
+
+	<xs:element name="LocationLineStringCoordinates" type="geo:LineStringType" substitutionGroup="ag-acrsi:LocationCoordinatesAbstract" nillable="true">
+		<xs:annotation>
+			<xs:documentation>A line string is a special curve that consists of a single segment with linear interpolation. It is defined by two or more coordinate tuples, with linear interpolation between.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+
+	<xs:element name="LocationPointCoordinates" type="geo:PointType" substitutionGroup="ag-acrsi:LocationCoordinatesAbstract" nillable="true">
+		<xs:annotation>
+			<xs:documentation>A 2D or 3D geometric point is defined by a single coordinate tuple. The direct position of a point is specified by the gml:pos element which is of type gml:DirectPositionType.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+
 	<xs:element name="LocationCoordinatesAbstract" abstract="true">
 		<xs:annotation>
 			<xs:documentation>A data concept for geospatial coordinates.</xs:documentation>

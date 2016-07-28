@@ -3,7 +3,7 @@
 <CropYear>2014</CropYear>
 	<OriginatorIdentificationID>XYZ123</OriginatorIdentificationID>
 	<CustomerInfo>
-		<FileCustomerIdentifier>12345</FileCustomerIdentifier>
+		<FileCustomerIdentifier>1</FileCustomerIdentifier>
 		<CustomerInterAgencyIdentificationID>123123</CustomerInterAgencyIdentificationID>
 		<TaxIdentificationID>123456789</TaxIdentificationID>
 		<TaxIdentificationTypeCode>2</TaxIdentificationTypeCode>
@@ -25,7 +25,7 @@
 					<nc:LocationStateFIPS5-2NumericCode>01</nc:LocationStateFIPS5-2NumericCode>
 					<nc:LocationCountyCode>1</nc:LocationCountyCode>
 					<SubfieldNumber>ZZ</SubfieldNumber>
-					<CoreProductCode>0081</CoreProductCode>
+					<CoreProductCode>0122</CoreProductCode>
 					<CoreProductTypeCode>0300</CoreProductTypeCode>
 					<ProductIntendedUseCode>0016</ProductIntendedUseCode>
 					<OriginalReportedAcreage>25.91</OriginalReportedAcreage>
@@ -51,8 +51,8 @@
 						<PrecisionAgriculturalSubMeterAccuracyIndicator>true</PrecisionAgriculturalSubMeterAccuracyIndicator>
 					</GeospatialSourceInfo>
 					<ProducerShare>
-						<FileCustomerIdentifier>12345</FileCustomerIdentifier>
-						<ProducerSharePercent>100.0</ProducerSharePercent>
+						<FileCustomerIdentifier>1</FileCustomerIdentifier>
+						<ProducerSharePercent>1.5011</ProducerSharePercent>
 					</ProducerShare>
 				</AgricultureProductionPlan>
 			</FieldCropAcreage>
