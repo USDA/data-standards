@@ -1,4 +1,3 @@
-# This is a test site.
 
 # Welcome to the ACRSI Data Standards and Collaboration Page
 
