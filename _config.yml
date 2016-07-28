@@ -1,0 +1,16 @@
+
+title: Acreage Crop Reporting
+desc: "Data Standards and Collaboration Space"
+email: enterprise.architecture@ocio.usda.gov
+description: > # this means to ignore newlines until "baseurl:"
+  The vision of the USDA Acreage Crop Reporting is to “have a common USDA framework for producer commodity reporting in support of USDA programs”.  
+baseurl: "https://bbrotsos.github.io/data-standards"
+#baseurl: ""
+#url: "http://acrsi.usda.gov" # the base hostname & protocol for your site
+twitter_username: usda
+github_username:  usda
+org_name: bbrotsos
+repo_name: data-standards
+
+# Build settings
+markdown: kramdown

@@ -1,0 +1,9 @@
+{
+  "@context": {
+    "dc": "http://purl.org/dc/terms/",
+    "ag": "https://www.usda.gov/data_standards/acrsi/v0.9/schema#",
+    "title": "dc:title",
+    "description": "dc:description",
+    "cropYear": "ag:cropYear"
+  }
+}

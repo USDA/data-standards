@@ -1,0 +1,76 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "http://localhost:4000/json-schema/acrsi_submission.json#",
+	"title": "ACRSI Data Submission",
+	"description": "",
+	"type": "object",
+	"dependencies": {
+		"@type": [
+			"@context"
+		]
+	},
+	"required": [
+		"cropYear",
+		"originatorIdentification",
+		"farm",
+		"customer"
+	],
+	"properties": {
+		"@context": {
+			"title": "Metadata Context",
+			"description": "URL or JSON object for the JSON-LD Context that defines the schema used",
+			"type": "string",
+			"format": "uri"
+		},
+		"@id": {
+			"title": "Metadata Catalog ID",
+			"description": "IRI for the JSON-LD Node Identifier of the Catalog. ",
+			"type": "string",
+			"format": "uri"
+		},
+		"@type": {
+			"title": "Metadata Context",
+			"description": "IRI for the JSON-LD data type.",
+			"enum": [
+				"ag:ACRSI_Submission"
+			]
+		},
+		"conformsTo": {
+			"description": "Version of Schema",
+			"title": "Version of Schema",
+			"enum": [
+				"https:/www.usda.gov/data_standards/acrsi/v0.9/schema"
+			]
+		},
+		"cropYear": {
+			"title": "Crop Year",
+			"description": "The period of time within which the crop is normally grown and designated by the calendar year in which the crop is normally harvested.<br/> For crops:  <ul><li> harvested over 2 calendar years, the crop year is the calendar year in which the majority of the crop would have been harvested.</li><li>grown over more than 2 calendar years, each year in the growing period will be considered as a separate crop year designated by the calendar year in which the crop sustained a loss.</li><li>for which CAT coverage is available, the crop year will be as defined by such coverage.  RMA's regulations define Crop Year as the period within which the insured crop is normally grown, regardless of whether or not it is actually grown, and designated by the calendar year in which the insured crop is normally harvested, unless otherwise specified in the Crop Provisions.</li></ul>",
+			"type": "string",
+			"minLength": 4,
+			"maxLength": 4
+		},
+		"originatorIdentification": {
+			"title": "Originator Identification",
+			"description": "Identification of the entity responsible for originating/publishing data. <br/>For Acreage Reporting it identifies the FSA Service Center, Approved Insurance Provider (AIP), or Third Party Site which collected and published the acreage data and any accompanying geospatial data.",
+			"type": "string",
+			"minLength": 0,
+			"maxLength": 6
+		},
+		"farm": {
+		    "type": "array",
+		    "items": {
+			   "$ref": "farm.json#",
+			   "minItems": 1,
+               "uniqueItems": true
+			}
+		},
+		"customer": {
+		    "type": "array",
+		    "items": {
+			    "$ref": "customer.json",
+			    "minItems": 1,
+               "uniqueItems": true
+			}
+		}
+	}
+}

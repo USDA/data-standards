@@ -1,0 +1,35 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "http://localhost:4000/json-schema/tract.json#",
+	"title": "ACRSI Data Submission",
+	"description": "",
+	"type": "object",
+	"required": [
+		"tractNumber",
+		"field"
+	],
+	"properties": {
+		"@type": {
+			"title": "Metadata Context",
+			"description": "IRI for the JSON-LD data type.",
+			"enum": [
+				"ag:Tract"
+			]
+		},
+		"tractNumber": {
+			"title": "Tract Number",
+			"description": "The identification number assigned to a unit of contiguous land that is under one ownership and that is operated as a farm or part of a farm.  An owner is a person or business having deed to the land.  Tract numbers are assigned by an FSA county office, and are unique within that office's farms. A Tract Number is used in conjunction with a State FSA Code and County FSA Code for uniqueness. Tract numbers are not necessarily unique based upon State ANSI Code and County ANSI in instance where the ANSI codes are not the same as the FSA codes.",
+			"type": "string",
+			"minLength": 1,
+			"maxLength": 7
+		},
+		"field": {
+		    "type": "array",
+		    "items": {
+				"$ref": "field.json",
+				"minItems": 1,
+               "uniqueItems": true
+			}
+		}
+	}
+}

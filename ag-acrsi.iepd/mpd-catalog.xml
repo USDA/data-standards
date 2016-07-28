@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="US-ASCII"?>
+<c:Catalog
+    xmlns:ag-acrsi="http://www.usda.gov/wps/portal/usda/ag-acrsi/extension/1.0/"
+    xmlns:c="http://reference.niem.gov/niem/resource/mpd/catalog/3.0/"
+    xmlns:structures="http://release.niem.gov/niem/structures/3.0/"
+    xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/">
+    <c:MPD 
+        c:mpdURI="http://www.usda.gov/wps/portal/usda/ag-acrsi/extension/1.0/1.0rev4/" 
+	c:mpdClassURIList=
+		"http://reference.niem.gov/niem/specification/model-package-description/3.0/#MPD
+		 http://reference.niem.gov/niem/specification/model-package-description/3.0/#IEPD"
+        c:mpdName="ag-acrsi" 
+        c:mpdVersionID="1.0rev4">
+        <c:MPDInformation>
+            <c:AuthoritativeSource> 
+                <nc:EntityOrganization>
+                    <nc:OrganizationName>USDA Agriculture</nc:OrganizationName>
+                    <nc:OrganizationPrimaryContactInformation>
+                        <nc:ContactWebsiteURI>http://www.usda.gov/wps/portal/usda/usdahome?</nc:ContactWebsiteURI>
+                    </nc:OrganizationPrimaryContactInformation>
+                </nc:EntityOrganization>
+            </c:AuthoritativeSource>
+            <c:CreationDate>2016-06-10</c:CreationDate>
+            <c:StatusText>Final-Draft</c:StatusText>
+        </c:MPDInformation>
+        <c:IEPConformanceTarget structures:id="Agriculture ACRSI-IEP">
+            <nc:DescriptionText>
+                An IEP class for USDA ACRSI reporting.
+            </nc:DescriptionText>
+            <c:HasDocumentElement c:qualifiedNameList="ag-acrsi:AcreageSubmissionFile"/>
+            <c:XMLSchemaValid>
+                <c:XMLCatalog c:pathURI="base-xsd/xml-catalog.xml"/>
+            </c:XMLSchemaValid>
+            <c:IEPSampleXMLDocument c:pathURI="iep-samples/ag-acrsi_sample.xml"/>
+        </c:IEPConformanceTarget>
+        <c:ReadMe c:pathURI="readme.txt"/>
+        <c:MPDChangeLog c:pathURI="changelog.txt"></c:MPDChangeLog>
+        <c:Wantlist c:pathURI="base-xsd/niem/wantlist.xml"/>
+        <c:ConformanceAssertion c:pathURI="conformance-assertion.pdf"/>
+        <c:ExtensionSchemaDocument c:pathURI="base-xsd/extension/1.0/ag-acrsi.xsd"/>
+     </c:MPD>
+</c:Catalog>

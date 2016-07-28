@@ -1,0 +1,420 @@
+{
+	"cropYear": {
+		"title": "Crop Year",
+		"description": "The period of time within which the crop is normally grown and designated by the calendar year in which the crop is normally harvested.<br/> For crops:  <ul><li> harvested over 2 calendar years, the crop year is the calendar year in which the majority of the crop would have been harvested.</li><li>grown over more than 2 calendar years, each year in the growing period will be considered as a separate crop year designated by the calendar year in which the crop sustained a loss.</li><li>for which CAT coverage is available, the crop year will be as defined by such coverage.  RMA's regulations define Crop Year as the period within which the insured crop is normally grown, regardless of whether or not it is actually grown, and designated by the calendar year in which the insured crop is normally harvested, unless otherwise specified in the Crop Provisions.</li></ul>",
+		"type": "string",
+		"minLength": 4,
+		"maxLength": 4
+	},
+	"originatorIdentification": {
+		"title": "Originator Identification",
+		"description": "Identification of the entity responsible for originating/publishing data. <br/>For Acreage Reporting it identifies the FSA Service Center, Approved Insurance Provider (AIP), or Third Party Site which collected and published the acreage data and any accompanying geospatial data.",
+		"type": "string",
+		"minLength": 0,
+		"maxLength": 6
+	},
+	"fileCustomerIdentifier": {
+		"title": "File Customer Identifier",
+		"description": "An internal identifier uniquely identifying a customer within a specific file. Each unique customer within a given file will have a unique File Customer Identifier. File Customer Identifier values are not unique across files.",
+		"type": "string",
+		"minLength": 1,
+		"maxLength": 2
+	},
+	"interagencyCustomerIdentifier": {
+		"title": "Interagency Customer Identifier",
+		"description": "A system generated, unique internal identifier used between agencies to identify a USDA customer (individual or business). <br/>Currently SCIMS Core Customer Identifier is the source value. This will change if a different customer unique identifier is adopted.",
+		"type": "string",
+		"minLength": 1,
+		"maxLength": 2
+	},
+	"taxIdentification": {
+		"title": "Tax Identification",
+		"description": "The identification assigned to a specific individual, business or other entity and is used to authenticate the individual/entity for matters of taxation and other federal government business.<br/>Tax Identification may be a Social Security or Employer Identification number.<br/>Federal Tax Identification is not necessarily unique for all United States Department of Agriculture (USDA) customers unless it is combined with a Tax Identification Type Code.",
+		"type": "string",
+		"minLength": 9,
+		"maxLength": 9
+	},
+	"taxIdentificationTypeCode": {
+		"title": "Tax Identification Type Code",
+		"description": "Code identifying the type of identification assigned to a specific individual, business or other entity and is used to authenticate the individual/entity for matters of taxation and other government business.<br/>For ACRSI Pilot the Following RMA values will be used:<br/>1 - Social Security Number (SSN)<br/>2 - Employer Id Number (EIN)",
+		"enum": [
+			"1",
+			"2"
+		],
+		"type": "string",
+		"minLength": 1,
+		"maxLength": 1
+	},
+	"businessName": {
+		"title": "Business Name",
+		"description": "The name of a non-individual which transacts business with a USDA office. This can be a business, group, partnership, family-owned farm or ranch, etc. to which the servicing office provides assistance.  In the case of a family farm or ranch operation, the business name can be the same as the individual's name.",
+		"type": "string",
+		"minLength": 1,
+		"maxLength": 100
+	},
+	"middleName": {
+		"title": "First Name",
+		"description": "The first name in the full (multi-part) name of an individual (person) or entity.",
+		"type": "string",
+		"minLength": 1,
+		"maxLength": 20
+	},
+	"middleName": {
+		"title": "Middle Name",
+		"description": "The middle (or second, or alternate) name in the full (multi-part) name of an individual or entity.",
+		"type": "string",
+		"minLength": 1,
+		"maxLength": 20
+	},
+	"lastName": {
+		"title": "Last Name",
+		"description": "Last name in the full name (multi-part) of an individual (person) or entity.",
+		"type": "string",
+		"minLength": 1,
+		"maxLength": 25
+	},
+	"nameSuffix": {
+		"title": "Name Suffix",
+		"description": "A free-form optional suffix used in an individual's name.   The following list comprises the suggested domain.  However, the user should be able to type in entries not found in this list.<br/>DOMAIN:    Jr, Sr, I, II, III, MD",
+		"enum": [
+			"Jr",
+			"Sr",
+			"I",
+			"II",
+			"III",
+			"Md"
+		],
+		"type": "string",
+		"minLength": 1,
+		"maxLength": 10
+	},
+	"administrativeStateFsaCode": {
+		"title": "Administrative State Fsa Code",
+		"description": "State code of administering state office. <br/>State code used within the Farm Service Agency (FSA) to identify a state within the United States, United States Possessions, freely associated areas of the United States, or a combination thereof as defined within Handbook 1-CM, Exhibit 100.<br/>Many of the code values used by are similar to State ANSI/FIPS Code, which follows the American National Standards Institute (ANSI) numeric INCITS 31-2009 and Federal Information Processing Standards Publications (FIPS Pub) 6-4 standard. In some cases FSA codes are different from the ANSI/FIPS codes.  Specific values are documented in the Handbook 1-CM, Exhibit 100.",
+		"type": "string",
+		"minLength": 2,
+		"maxLength": 2
+	},
+	"administrativeCountyFsaCode": {
+		"title": "Administrative County Fsa Code",
+		"description": "County code of the administering county office.<br/>The code is used within the Farm Service Agency (FSA) to identify a county, equivalent entity, or combination thereof within the United States, its possessions, and associated areas as defined within Handbook 1-CM, Exhibit 100.<br/>Many of the code values used by are similar to County ANSI/FIPS Code, which follows the American National Standards Institute (ANSI) numeric INCITS 31-2009 and Federal Information Processing Standards Publications (FIPS Pub) 6-4 standard. The expanded even-numbered FSA codes identify counties that contain more than one office due to geographic considerations.<br/>Specific values are documented in Handbook 1-CM.",
+		"type": "string",
+		"minLength": 3,
+		"maxLength": 3
+	},
+	"farmNumber": {
+		"title": "Farm Number",
+		"description": "An identification number assigned to all land under control of a particular operator within a particular county.<br/>Each County assigns Farm Numbers independently. As a result, farms in different counties might be assigned the same Farm Number; i.e, a Farm Number might be unique only within a particular county. Thus, to uniquely identify a farm, the State FSA Code and County FSA Code must be specified in combination with the Farm Number.",
+		"type": "string",
+		"minLength": 1,
+		"maxLength": 7
+	},
+	"TractNumber": {
+		"title": "Tract Number",
+		"description": "The identification number assigned to a unit of contiguous land that is under one ownership and that is operated as a farm or part of a farm.  An owner is a person or business having deed to the land.  Tract numbers are assigned by an FSA county office, and are unique within that office's farms. A Tract Number is used in conjunction with a State FSA Code and County FSA Code for uniqueness. Tract numbers are not necessarily unique based upon State ANSI Code and County ANSI in instance where the ANSI codes are not the same as the FSA codes.",
+		"type": "string",
+		"minLength": 1,
+		"maxLength": 7
+	},
+	"FieldNumber": {
+		"title": "Field Number",
+		"description": "The identification number assigned to a field of land that is part of a farm tract.<br/>Field numbers are assigned by an FSA county office, and are unique within that office's farms. A Field Number is used in conjunction with Tract Number, State FSA Code and County FSA Code for uniqueness. Field number and Tract Number are not necessarily unique based upon State ANSI Code and County ANSI Code in instances where the ANSI codes are not the same as the FSA codes.",
+		"type": "string",
+		"minLength": 1,
+		"maxLength": 7
+	},
+	"cluIdentifier": {
+		"title": "CLU Identifier",
+		"description": "The identification number assigned to a field of land that is part of a farm tract.<br/>Field numbers are assigned by an FSA county office, and are unique within that office's farms. A Field Number is used in conjunction with Tract Number, State FSA Code and County FSA Code for uniqueness. Field number and Tract Number are not necessarily unique based upon State ANSI Code and County ANSI Code in instances where the ANSI codes are not the same as the FSA codes.",
+		"type": "string",
+		"minLength": 1,
+		"maxLength": 7
+	},
+	"cluProducerReviewRequestIndicator": {
+		"title": "CLU Producer Review Request Indicator",
+		"description": "Indicates that the producer has requested that a Common Land Unit (CLU) be reviewed.<br/>Y =Yes<br/>N = No",
+		"type": "string",
+		"minLength": 1,
+		"maxLength": 1
+	},
+	"stateAnsiCode": {
+		"title": "State ANSI Code",
+		"description": "A code defined within the American National Standards Institute (ANSI) numeric INCITS 38-2009 standard for a state within the United States, a United States possession, freely associated area of the United States, or combination thereof.",
+		"type": "string",
+		"minLength": 2,
+		"maxLength": 2
+	},
+	"countyAnsiCode": {
+		"title": "County ANSI Code",
+		"description": "A code defined within the American National Standards Institute (ANSI) numeric INCITS 31-2009 standard to identify a county or equivalent entity within the United States, its possessions, and associated areas. A County ANSI Code is unique only when associated with the state or equivalent entity of the United States in which the county is physically located.",
+		"type": "string",
+		"minLength": 3,
+		"maxLength": 3
+	},
+	"subfieldNumber": {
+		"title": "Subfield Number",
+		"description": "An alpha 'number' that is used to uniquely identify a subfield within a field, within a tract within a farm within a state and county. Subfields are areas of a field that share a set of common planting characteristic in terms of crop, crop type, intended use, etc. By convention the first defined subfield is given a value of 'A', with subsequent subfields following in alphabetic order.",
+		"type": "string",
+		"minLength": 2,
+		"maxLength": 2
+	},
+	"coreProductCode": {
+		"title": "Core Product Code",
+		"description": "Code providing a classification of agricultural products defined by the Pilot CVT (Crop Validation Table). Products are classified into individual crop and commodity types, tree types, and types of livestock.",
+		"type": "string",
+		"minLength": 2,
+		"maxLength": 2
+	},
+	"coreProductTypeCode": {
+		"title": "Core Product Type Code",
+		"description": "Code providing a subclassification of agricultural products in addition to the main classification provided by the Core Product Code. Each product classified by a Core Product Code is also assigned a Core Product Type Code providing greater clarification of the crop/commodity, tree, livestock, etc. Codes are maintained by the Pilot CVT (Crop Validation Table).",
+		"type": "string",
+		"minLength": 4,
+		"maxLength": 4
+	},
+	"productIntendedUseCode": {
+		"title": "Product Intended Use Code",
+		"description": "Code identifying the intended use for an agricultural product such as a crop/commodity, tree, livestock, etc. Codes for intended uses are specific to a particular combination of Core Product Code and Core Product Type Code and are maintained by the Pilot CVT.",
+		"type": "string",
+		"minLength": 4,
+		"maxLength": 4
+	},
+	"originalReportedAcreage": {
+		"title": "Original Reported Acreage",
+		"description": "The original, unmodified, number of acres that were reported.",
+		"type": "string",
+		"minLength": 0,
+		"maxLength": 8
+	},
+	"finalReportedAcreage": {
+		"title": "Final Reported Acreage",
+		"description": "The final number of acres that were reported.",
+		"type": "string",
+		"minLength": 0,
+		"maxLength": 8
+	},
+	"reportedAcreageModifiedIndicator": {
+		"title": "Reported Acreage Modified Indicator",
+		"description": "Indicates whether the reported acreage was modified from its original value. Y = Yes N = No",
+		"type": "string",
+		"minLength": 1,
+		"maxLength": 1
+	},
+	"reportedAcreageModifiedReasonCode": {
+		"title": "Reported Acreage Modified Reason Code",
+		"description": "Code identifying the reason that the reported acreage was modified from its original value.<br/>G = GPS Issue<br/>C = Corrected Acres<br/>MD = Missing Data<br/>O = Other",
+		"enum": [
+			"G",
+			"C",
+			"MD",
+			"O"
+		],
+		"type": "string",
+		"minLength": 1,
+		"maxLength": 2
+	},
+	"reportedAcreageModifiedOtherReasonText": {
+		"title": "Reported Acreage Modified Other Reason Text",
+		"description": "Freeform text providing the reason that a acreage was modified from its original value when a reason other than the possible list of provided reasons is needed.",
+		"type": "string",
+		"minLength": 1,
+		"maxLength": 80
+	},
+	"acreageCalculationProjectionCode": {
+		"title": "Acreage Calculation Projection Code",
+		"description": "Code identifying the geospatial projection standard used for calculating acreage.",
+		"type": "string",
+		"minLength": 4,
+		"maxLength": 8
+	},
+	"originalPlantedDate": {
+		"title": "Original Planted Date",
+		"description": "The original value for the date that a specific crop was planted.",
+		"type": "string",
+		"minLength": 4,
+		"maxLength": 8
+	},
+	"finalPlantedDate": {
+		"title": "Final Planted Date",
+		"description": "The final value for the date that a specific crop was planted.",
+		"type": "string",
+		"minLength": 4,
+		"maxLength": 8
+	},
+	"plantedDateModifiedIndicator": {
+		"title": "Planted Date Modified Indicator",
+		"description": "Indicates whether the planted date was modified from its original value.",
+		"type": "string",
+		"minLength": 1,
+		"maxLength": 1
+	},
+	"plantedDateModifiedReasonCode": {
+		"title": "Planted Date Modified Indicator",
+		"description": "Code identifying the reason that a planted date was modified from its original value.<br/>MP = Multiple Planting Dates<br/>C = Correction<br/>O = Other",
+		"enum": [
+			"MP",
+			"C",
+			"O"
+		],
+		"type": "string",
+		"minLength": 1,
+		"maxLength": 2
+	},
+	"plantedDateModifiedOtherReasonText": {
+		"title": "Planted Date Modified Other Reason Text",
+		"description": "Freeform text providing the reason that a planted date was modified from its original value when a reason other than the possible list of provided reasons is needed.",
+		"type": "string",
+		"minLength": 1,
+		"maxLength": 80
+	},
+	"productPlantingCode": {
+		"title": "Product Planting Code",
+		"description": "Code identifying the planting of a product/crop as either conventional (planted as normal or no planting required) or unconventional/irregular in a predefined way.<br/>F- Failed Acreage (acreage that was timely planted with the intent to harvest, but because of disaster related conditions, the crop failed before it could be brought to harvest).<br/>P- Prevented Planted (the inability to plant the intended crop acreage with proper equipment by the final planting date for the crop type because of a natural disaster). <br/>V-  Volunteer. A crop that was planted in a previous crop year on the applicable acreage or drifted from other acreage, successfully self-seeded, and is growing this crop year on the applicable acreage without being intentionally sown or managed.",
+		"enum": [
+			"F",
+			"P",
+			"V"
+		],
+		"type": "string",
+		"minLength": 1,
+		"maxLength": 1
+	},
+	"irrigationPracticeCode": {
+		"title": "Irrigation Practice Code",
+		"description": "Code identifying the irrigation practice used for a unit of land with a crop.<br/>Irrigated Practice is the method of producing a crop by which water, from an adequate water source, is artificially applied in sufficient amounts by appropriate and adequate irrigation equipment and facilities and at the proper times necessary to produce one of the following:<br/>1. the yield expected for the area;<br/>2. the yield used to establish the production guarantee or amount of insurance/coverage on the irrigated acreage planted to the commodity;<br/>3. the producer’s established approved yield, as applicable. <br/>Acreage adjacent to water, such as but not limited to a pond, lake, river, stream, creek or brook, shall not be considered irrigated based solely on the proximity to the water.<br/>I = Irrigated<br/>N = Non-Irrigated",
+		"enum": [
+			"I",
+			"N"
+		],
+		"type": "string",
+		"minLength": 1,
+		"maxLength": 1
+	},
+	"organicPracticeTypeCode": {
+		"title": "Organic Practice Type Code",
+		"description": "A code representing the type of certification for farm acreage in regards to a system/plan of production and handling practice to produce an organic commodity.<br/>Organic practice that is Certified means a system/plan of production and handling practices to respond to site-specific conditions by integrating cultural, biological, and mechanical practices that foster cycling of resources, promote ecological balance, and conserve biodiversity, is certified by an accredited certifying agent, and used to produce an organic commodity or product according to the Organic Foods Production Act of 1990. <br/>Organic practice that is Transitional means a system/plan of production and handling practices to produce an organic commodity or product in accordance with the Organic Foods Production Act of 1990, but has not yet qualified to be designated as certified organic.<br/>N - Not Specified (Conventional)<br/>OC - Organic (USDA Certified)  <br/>OT - Organic (Transitional)  ",
+		"enum": [
+			"N",
+			"OC",
+			"OT"
+		],
+		"type": "string",
+		"minLength": 1,
+		"maxLength": 1
+	},
+	"croppingPracticeCode": {
+		"title": "Cropping Practice Code",
+		"description": "A code identifying the cropping practice applicable for a reported crop/commodity on a field/subfield.",
+		"type": "string",
+		"minLength": 1,
+		"maxLength": 99
+	},
+	"Producer Share Percent": {
+		"title": "Producer Share Percent",
+		"description": "Producer's share of a crop and the benefits coming from that crop, expressed as a percentage.",
+		"type": "string",
+		"minLength": 0,
+		"maxLength": 8
+	},
+	"geospatialShapeSourceCode": {
+		"title": "Geospatial Shape Source Code",
+		"description": "Code identifying the source data used to create a geospatial shape/polygon.<br/>B = Field Boundaries:  Polygon is based on the outer boundaries of the field (i.e., vehicle GPS capabilities)<br/>C = CLU:  Existing FSA CLU was used to provide the shape/polygon<br/>F = FMIS:  Shape/polygon has been created by the producer’s Farm Management Information System<br/>R = Raw Controller File:  Shape/polygon has been created from a producer submitted raw controller file<br/>D = Digitized:  Third party provider/producer has drawn/digitized the shape/polygon",
+		"enum": [
+			"B",
+			"C",
+			"F",
+			"R",
+			"D"
+		],
+		"type": "string",
+		"minLength": 1,
+		"maxLength": 1
+	},
+	"geospatialShapeModifiedIndicator": {
+		"title": "Geospatial Shape Modified Indicator",
+		"description": "Indicates whether the geospatial shape/polygon was modified from its original value. Y =Yes N = No",
+		"type": "string",
+		"minLength": 1,
+		"maxLength": 1
+	},
+	"geospatialShapeModifiedReasonCode": {
+		"title": "Geospatial Shape Modified Reason Code",
+		"description": "Code identifying the reason that a geospatial shape/polygon was modified from its original shape.<br/>G = GPS Issue<br/>C = Corrected Acres Calculation Difference<br/>MD = Missing Data<br/>S = Shape Drawn Incorrectly<br/>O = Other",
+		"enum": [
+			"G",
+			"C",
+			"MD",
+			"S",
+			"O"
+		],
+		"type": "string",
+		"minLength": 1,
+		"maxLength": 2
+	},
+	"geospatialShapeModifiedOtherReasonText": {
+		"title": "Geospatial Shape Modified Other Reason Text",
+		"description": "Freeform text providing the reason that a geospatial shape was modified from its original form when a reason other than the possible list of provided reasons is needed.",
+		"type": "string",
+		"minLength": 1,
+		"maxLength": 80
+	},
+	"geospatialShapeProcessDate": {
+		"title": "Geospatial Shape Process Date",
+		"description": "The date that a geospatial shape/polygon was created, either from processing raw data or from manual entry.",
+		"type": "string",
+		"minLength": 4,
+		"maxLength": 8
+	},
+	"geospatialDataSubmissionMethodCode": {
+		"title": "Geospatial Data Submission Method Code",
+		"description": "Code identifying the method used to submit geospatial data used to create a geospatial shape/polygon. <br/>C= CLU - Existing FSA CLU is used to provide the shape/polygon<br/>G= GIS Algorithm – GIS algorithm used by third party provider/producer system to create operational boundaries based on raw data collection method (MICS, FMIS)<br/>D= Digitized - Third party provider/producer has drawn/digitized the shape/polygon",
+		"enum": [
+			"C",
+			"G",
+			"D"
+		],
+		"type": "string",
+		"minLength": 1,
+		"maxLength": 1
+	},
+	"micsCode": {
+		"title": "MICS Code",
+		"description": "Code identifying the Mobile Implement Control System (MICS) used in the collection of geospatial data.<br/>AG = AGCO<br/>AL = AgLeader<br/>CNH = Case IH/Ford/New Holland<br/>FS = FSA<br/>JD = John Deere<br/>PP = Precision Planting<br/>RA = Raven<br/>TR = Trimble<br/>O = Other<br/>UN  = Unknown",
+		"enum": [
+			"AG",
+			"AL",
+			"CNH",
+			"FS",
+			"JD",
+			"PP",
+			"RA",
+			"TR",
+			"O",
+			"UN"
+		],
+		"type": "string",
+		"minLength": 1,
+		"maxLength": 3
+	},
+	"micsName": {
+		"title": "MICS Name",
+		"description": "Name of the Mobile Implement Control System (MICS) used in the collection of geospatial data.",
+		"type": "string",
+		"minLength": 1,
+		"maxLength": 20
+	},
+	"geospatialSourceDataCreationDate": {
+		"title": "Geospatial Source Data Creation Date",
+		"description": "The creation date of the data that was used as a source for geospatial data being considered. For geospatial data sourced by means of Precision Agriculture, this is the date the raw data was collected by the equipment. For geospatial data that was created from an existing Common Land Unit (CLU) shape, this is the date the source CLU was created.",
+		"type": "string",
+		"minLength": 20,
+		"maxLength": 20
+	},
+	"precisionAgriculturalSubMeterAccuracyIndicator": {
+		"title": "Precision Agricultural Sub Meter Accuracy Indicator",
+		"description": "Indicates whether geospatial data collected from Precision Agriculture technology has horizontal coordinate measurements that are accurate within a sub meter.  Y =Yes N = No",
+		"type": "string",
+		"minLength": 1,
+		"maxLength": 1
+	}
+}

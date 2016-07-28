@@ -1,0 +1,1520 @@
+{
+	"data_elements": 
+	[
+		{
+			"page_name": "Crop_Year",
+			"name": "Crop Year",
+			"xml_name": "CropYear",
+			"json_name": "cropYear",
+			"db_name": "CROP_YR",
+			"source": "Acreage Crop Reporting",
+			"object_class": "Crop",
+			"data_type_code": "Integer",
+			"min_length": 4,
+			"max_length": 4,
+			"representation_class": "Year",
+			"data_element_example": "2015",
+			"obligation_code": "Mandatory",
+			"business_rules":[{
+			    "source": "Acreage Crop Reporting", 
+			    "description": "Only Current Year (2016)",
+			    "status": "Active",
+			    "rule_number": "ACRSI-001-01"
+			 }],
+			"definition": "A period of time (in year) within which the crop is normally grown and designated by the calendar year in which the crop is normally harvested. For crops: <ul><li>Harvested over 2 calendar years, the crop year is the calendar year in which the majority of the crop would have been harvested.</li><li>Grown over more than 2 calendar years, each year in the growing period will be considered as a separate crop year designated by the calendar year in which the crop sustained a loss.</li><li>For which CAT coverage is available, the crop year will be as defined by such coverage.</li></ul>Risk Management Agency's regulations define Crop Year as the period within which the insured crop is normally grown, regardless of whether or not it is actually grown, and designated by the calendar year in which the insured crop is normally harvested, unless otherwise specified in the Crop Provisions."
+			},
+        
+		{
+			"page_name": "Administrative_State_Fsa_Code",
+			"name": "Administrative State Farm Service Agency Code",
+			"xml_name": "AdministrativeStateFsaCode",
+			"json_name": "administrativeStateFsaCode",
+			"source": "Acreage Crop Reporting",
+			"data_type_code": "String",
+			"min_length": 2,
+			"max_length": 2,
+			"obligation_code": "Mandatory",
+			"data_element_example": "01",
+			"representation_class": "Code",
+			"business_rules": [{
+			   "source": "Acreage Crop Reporting",
+			   "description": "The value must be in pilot area"
+			},
+			{
+			   "source": "Acreage Crop Reporting",
+			   "description": "Must use active combinations of <a href='Administrative_State_Fsa_Code.html'>Administrative State FSA Code</a>, <a href='Administrative_County_Fsa_Code.html'>Administrative County FSA Code</a>, <a href='Farm_Number.html'>Farm Number</a>, <a href='Tract_Number.html'>Tract Number</a>, <a href='Field_Number.html'>Field Number</a>, and <a href='CLU_Identifier.html'>CLU Identifier</a> per FSA Farm Records"
+			   }
+			   ],
+			"definition": "A state code of administering state office.<br/><br/>State code used within the Farm Service Agency (FSA) to identify a state within the United States, United States Possessions, freely associated areas of the United States, or a combination thereof as defined within Handbook 1-CM, Exhibit 100.<br/><br/>Many of the code values used by State FSA Code are similar to State ANSI/FIPS Code, which follows the American National Standards Institute (ANSI) numeric INCITS 31-2009 and Federal Information Processing Standards Publications (FIPS Pub) 6-4 standard. In some cases FSA codes are different from the ANSI/FIPS codes.<br/><br/>Specific values are documented in the Handbook 1-CM, Exhibit 100. A machine-readable version can be found <a href='../ag-acrsi.iepd/base-xsd/extension/1.0/ag-codes/usda_fsa_state.xsd'>here</a>"
+			},
+
+		{
+			"page_name": "Administrative_County_Fsa_Code",
+			"name": "Administrative County Farm Service Agency Code",
+			"xml_name": "AdministrativeCountyFsaCode",
+			"json_name": "administrativeCountyFsaCode",
+			"source": "Acreage Crop Reporting",
+			"data_type_code": "String",
+			"min_length": 3,
+			"max_length": 3,
+			"obligation_code": "Mandatory",
+			"data_element_example": "001",
+			"representation_class": "Code",
+			"business_rules": [{
+			   "source": "Acreage Crop Reporting",
+			   "description": "The value must be a valid county for the applicable value in <a href='Administrative_State_Fsa_Code.html'> Administrative State FSA Code</a>"
+			},
+			{
+			   "source": "Acreage Crop Reporting",
+			   "description": "Must use active combinations of <a href='Administrative_State_Fsa_Code.html'>Administrative State FSA Code</a>, <a href='Administrative_County_Fsa_Code.html'>Administrative County FSA Code</a>, <a href='Farm_Number.html'>Farm Number</a>, <a href='Tract_Number.html'>Tract Number</a>, <a href='Field_Number.html'>Field Number</a>, and <a href='CLU_Identifier.html'>CLU Identifier</a> per FSA Farm Records"
+			   }],
+			"definition": "A county code of the administering county office.<br/><br/>The code is used within the Farm Service Agency (FSA) to identify a county, equivalent entity, or combination thereof within the United States, its possessions, and associated areas as defined within Handbook 1-CM, Exhibit 100. <br/><br/> Many of the code values used by are similar to County ANSI/FIPS Code, which follows the American National Standards Institute (ANSI) numeric INCITS 31-2009 and Federal Information Processing Standards Publications (FIPS Pub) 6-4 standard. The expanded even-numbered FSA codes identify counties that contain more than one office due to geographic considerations. <br/><br/>Specific values are documented in Handbook 1-CM. A machine-readable version can be found <a href='../ag-acrsi.iepd/base-xsd/extension/1.0/ag-codes/usda_fsa_county.xsd'>here</a>"
+		},
+
+		{
+			"page_name": "Farm_Number",
+			"name": "Farm Number",
+			"xml_name": "FarmNumber",
+			"json_name": "farmNumber",
+			"source": "Acreage Crop Reporting",
+			"data_type_code": "Integer",
+			"min_length": 1,
+			"max_length": 7,
+			"obligation_code": "Mandatory",
+			"data_element_example": "1234567",
+			"representation_class": "Number",
+			"business_rules": [{
+			   "source": "Acreage Crop Reporting",
+			   "description": "Must be an active farm in the pilot area"
+			},
+			{
+			   "source": "Acreage Crop Reporting",
+			   "description": "Must use active combinations of <a href='Administrative_State_Fsa_Code.html'>Administrative State FSA Code</a>, <a href='Administrative_County_Fsa_Code.html'>Administrative County FSA Code</a>, <a href='Farm_Number.html'>Farm Number</a>, <a href='Tract_Number.html'>Tract Number</a>, <a href='Field_Number.html'>Field Number</a>, and <a href='CLU_Identifier.html'>CLU Identifier</a> per FSA Farm Records"
+			   }],
+			"definition": "An identification number assigned to all land under control of a particular operator within a particular county.<br/><br/>Each County assigns Farm Numbers independently. As a result, farms in different counties might be assigned the same Farm Number; i.e, a Farm Number might be unique only within a particular county. Thus, to uniquely identify a farm, the State FSA Code and County FSA Code must be specified in combination with the Farm Number."
+			},
+		
+
+		{
+			"page_name": "Tract_Number",
+			"name": "Tract Number",
+			"xml_name": "TractNumber",
+			"json_name": "TractNumber",
+			"source": "Acreage Crop Reporting",
+			"data_type_code": "Integer",
+			"min_length": 1,
+			"max_length": 7,
+			"obligation_code": "Mandatory",
+			"data_element_example": "1",
+			"representation_class": "Number",
+			"business_rules": [{
+			   "source": "Acreage Crop Reporting",
+			   "description": "Must be among the list of tracts associated with Farms as found in CLU the layer"
+			},
+			{
+			   "source": "Acreage Crop Reporting",
+			   "description": "Must use active combinations of <a href='Administrative_State_Fsa_Code.html'>Administrative State FSA Code</a>, <a href='Administrative_County_Fsa_Code.html'>Administrative County FSA Code</a>, <a href='Farm_Number.html'>Farm Number</a>, <a href='Tract_Number.html'>Tract Number</a>, <a href='Field_Number.html'>Field Number</a>, and <a href='CLU_Identifier.html'>CLU Identifier</a> per FSA Farm Records"
+			   }],
+			"definition": "An identification number assigned to a unit of contiguous land that is under one ownership and that is operated as a farm or part of a farm.  An owner is a person or business having deed to the land.<br/><br/>Tract numbers are assigned by an FSA county office, and are unique within that office''s farms. A Tract Number is used in conjunction with a State FSA Code and County FSA Code for uniqueness.<br/><br/>Tract numbers are not necessarily unique based upon State ANSI Code and County ANSI in instance where the ANSI codes are not the same as the FSA codes."
+			},
+
+		{
+			"page_name": "Field_Number",
+			"name": "Field Number",
+			"xml_name": "FieldNumber",
+			"json_name": "FieldNumber",
+			"source": "Acreage Crop Reporting",
+			"data_type_code": "Integer",
+			"min_length": 1,
+			"max_length": 7,
+			"obligation_code": "Mandatory",
+			"data_element_example": "1",
+			"representation_class": "Number",
+			"business_rules": [{
+			   "source": "Acreage Crop Reporting",
+			   "description": "Must be among the list of fields associated with a Tract and for the Farm as found in the CLU layer"
+			}, 
+			{
+			   "source": "Acreage Crop Reporting",
+			   "description": "Must use active combinations of <a href='Administrative_State_Fsa_Code.html'>Administrative State FSA Code</a>, <a href='Administrative_County_Fsa_Code.html'>Administrative County FSA Code</a>, <a href='Farm_Number.html'>Farm Number</a>, <a href='Tract_Number.html'>Tract Number</a>, <a href='Field_Number.html'>Field Number</a>, and <a href='CLU_Identifier.html'>CLU Identifier</a> per FSA Farm Records"
+			   }],
+			"definition": "An identification number assigned to a field of land that is part of a farm tract.<br/><br/>Field numbers are assigned by an FSA county office, and are unique within that office''s farms. A Field Number is used in conjunction with Tract Number, State FSA Code and County FSA Code for uniqueness.<br/><br/>Field number and Tract Number are not necessarily unique based upon State ANSI Code and County ANSI Code in instances where the ANSI codes are not the same as the FSA codes."
+			},
+
+		{
+			"page_name": "CLU_Identifier",
+			"name": "Common Land Unit Identifier",
+			"xml_name": "CLU_Identifier",
+			"json_name": "cluIdentifier",
+			"source": "Acreage Crop Reporting",
+			"data_type_code": "Integer",
+			"min_length": 1,
+			"max_length": 7,
+			"obligation_code": "Mandatory",
+			"data_element_example": "c2e455c0-7214-4e40-8e08-edfb4e48cbef",
+			"representation_class": "Identifier",
+			"business_rules": [{
+			   "source": "Acreage Crop Reporting",
+			   "description": "Must be associated with the Field associated with the tract and for the Farm as found in the CLU layer"
+			   },
+			   {
+			   "source": "Acreage Crop Reporting",
+			   "description": "Must use active combinations of <a href='Administrative_State_Fsa_Code.html'>Administrative State FSA Code</a>, <a href='Administrative_County_Fsa_Code.html'>Administrative County FSA Code</a>, <a href='Farm_Number.html'>Farm Number</a>, <a href='Tract_Number.html'>Tract Number</a>, <a href='Field_Number.html'>Field Number</a>, and <a href='CLU_Identifier.html'>CLU Identifier</a> per FSA Farm Records"
+			   },
+			   {
+			   "source": "Acreage Crop Reporting",
+			   "description": "Must in format XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX"
+			   }		
+			],
+			"definition": "A system-generated internal identifier of a common land unit (CLU). This identifier is for internal access use only.<br/><br/>A CLU is the smallest unit of land that has a permanent, contiguous boundary, common land cover and land management, a common owner, and a common producer association.<br/><br/>A CLU is closely related to FSA''s definition of 'fields', according to Handbook 2-CP. A CLU is also closely related to land units such as parcels, farmsteads, and lots that are used by NRCS, RMA and RD.<br/><br/>The authoritative source of CLU Identifier is Farm Records. CLU Identifier can remain constant even if the precise geospatial shape of the CLU is slightly altered."
+			},
+		{
+			"page_name": "Agriculture_Production_Plan",
+			"name": "Agriculture Production Plan",
+			"xml_name": "AgricultureProductionPlan",
+			"json_name": "agricultureProductionPlan",
+			"data_type_code": "Container",
+			"definition": "An agricultural production plan describes the details of a crop that is planted on a specific field or subfield of land."
+},
+
+		{
+			"page_name": "CLU_Producer_Review_Request_Indicator",
+			"name": "Common Land Unit Producer Review Request Indicator",
+			"xml_name": "CLUProducerReviewRequestIndicator",
+			"json_name": "cluProducerReviewRequestIndicator",
+			"source": "Acreage Crop Reporting",
+			"data_type_code": "Boolean",
+			"min_length": 1,
+			"max_length": 1,
+			"obligation_code": "Mandatory",
+			"data_element_example": "true",
+			"representation_class": "Indicator",
+			"definition": "True if the producer has requested that a Common Land Unit (CLU) be reviewed; false otherwise."
+		},
+
+		{
+			"page_name": "State_ANSI_Code",
+			"name": "State ANSI Code",
+			"xml_name": "StateANSI_Code",
+			"json_name": "stateAnsiCode",
+			"source": "Acreage Crop Reporting",
+			"data_type_code": "String",
+			"min_length": 2,
+			"max_length": 2,
+			"obligation_code": "Mandatory",
+			"data_element_example": "01",
+			"representation_class": "Code",
+			"business_rules": [{
+			    "source": "Acreage Crop Reporting",
+			    "description": "The value must be valid ANSI state"
+			}],
+			"definition": "A code defined within the American National Standards Institute (ANSI) numeric INCITS 38-2009 standard for a state within the United States, a United States possession, freely associated area of the United States, or combination thereof."
+		},
+
+		{
+			"page_name": "County_ANSI_Code",
+			"name": "County ANSI Code",
+			"xml_name": "CountyANSI_Code",
+			"json_name": "countyAnsiCode",
+			"source": "Acreage Crop Reporting",
+			"data_type_code": "String",
+			"min_length": 3,
+			"max_length": 3,
+			"obligation_code": "Mandatory",
+			"data_element_example": "001",
+			"representation_class": "Code",
+			"business_rules": [{
+			    "source": "Acreage Crop Reporting",
+			    "description": "The value must be valid ANSI county for the applicable value in <a href='State_ANSI_Code'>State ANSI Code</a>"
+			}],
+			"definition": "A code defined within the American National Standards Institute (ANSI) numeric INCITS 31-2009 standard to identify a county or equivalent entity within the United States, its possessions, and associated areas. A County ANSI Code is unique only when associated with the state or equivalent entity of the United States in which the county is physically located."
+		},
+
+		{
+			"page_name": "Subfield_Number",
+			"name": "Subfield Number",
+			"xml_name": "SubfieldNumber",
+			"json_name": "subfieldNumber",
+			"source": "Acreage Crop Reporting",
+			"data_type_code": "String",
+			"min_length": 2,
+			"max_length": 2,
+			"obligation_code": "Optional",
+			"data_element_example": "001",
+			"representation_class": "Character",
+			"business_rules": [{
+			    "source": "Acreage Crop Reporting",
+			    "description": "Must be blank if an agricultural production plan covers an entire Field/CLU."
+			},
+			{
+			   "source": "Acreage Crop Reporting",
+			   "description": "Must be populated if there is more than one agricultural plan (aka field is split into multiple subfields)."
+			},
+			{
+			   "source": "Acreage Crop Reporting",
+			   "description": "The only values allowed are from A through ZZ (ex:  A, B, C…AA,AB,….ZZ), assigned alphabetically (A, B, C…AA, AB…ZZ) with no duplication within the same Field."
+			}],
+			"definition": "An alpha 'number' that is used to uniquely identify a subfield within a field, within a tract within a farm within a state and county. Subfields are areas of a field that share a set of common planting characteristic in terms of crop, crop type, intended use, etc. By convention the first defined subfield is given a value of 'A', with subsequent subfields following in alphabetic order."
+		},
+
+		{
+			"page_name": "Core_Product_Code",
+			"name": "Core Product Code",
+			"xml_name": "CoreProductCode",
+			"json_name": "coreProductCode",
+			"source": "Acreage Crop Reporting",
+			"data_type_code": "String",
+			"min_length": 2,
+			"max_length": 2,
+			"obligation_code": "Mandatory",
+			"data_element_example": "001",
+			"representation_class": "Code",
+			"business_rules": [{
+			    "source": "Acreage Crop Reporting",
+			    "description": "USDA provided list of values from CVT to be used (reference document yet to be identified)"
+			},
+			{ 
+			    "source": "Acreage Crop Reporting",
+			    "description": "Must use allowable combinations of <a href='Core_Product_Code.html'>Core Product Code</a>, <a href='Core_Product_Type_Code.html'>Core Product Type Code</a>, and <a href='Product_Intended_Use_Code.html'>Product Intended Use Code</a> per the pilot CVT"
+			    }],
+			"definition": "A product code providing a classification of agricultural products defined by the Pilot CVT (Crop Validation Table). Products are classified into individual crop and commodity types, tree types, and types of livestock."
+		},
+
+		{
+			"page_name": "Core_Product_Type_Code",
+			"name": "Core Product Type Code",
+			"xml_name": "CoreProductTypeCode",
+			"json_name": "coreProductTypeCode",
+			"source": "Acreage Crop Reporting",
+			"data_type_code": "String",
+			"min_length": 4,
+			"max_length": 4,
+			"obligation_code": "Mandatory",
+			"data_element_example": "001",
+			"representation_class": "Code",
+			"business_rules": [{
+			    "source": "Acreage Crop Reporting",
+			    "description": "USDA provided list of values from CVT to be used (reference document yet to be identified)"
+			},
+			{ 
+			    "source": "Acreage Crop Reporting",
+			    "description": "Must use allowable combinations of <a href='Core_Product_Code.html'>Core Product Code</a>, <a href='Core_Product_Type_Code.html'>Core Product Type Code</a>, and <a href='Product_Intended_Use_Code.html'>Product Intended Use Code</a> per the pilot CVT"
+			    }],
+			"definition": "A product type code providing a subclassification of agricultural products in addition to the main classification provided by the Core Product Code. Each product classified by a Core Product Code is also assigned a Core Product Type Code providing greater clarification of the crop/commodity, tree, livestock ,etc. Codes are maintained by the Pilot CVT (Crop Validation Table)."
+			},
+
+		{
+			"page_name": "Product_Intended_Use_Code",
+			"name": "Product Intended Use Code",
+			"xml_name": "ProductIntendedUseCode",
+			"json_name": "productIntendedUseCode",
+			"source": "Acreage Crop Reporting",
+			"data_type_code": "String",
+			"min_length": 4,
+			"max_length": 4,
+			"obligation_code": "Optional",
+			"data_element_example": "0016",
+			"representation_class": "Code",
+			"business_rules": [{
+			    "source": "Acreage Crop Reporting",
+			    "description": "USDA provided list of values from CVT to be used (reference document yet to be identified)"
+			},
+			{ 
+			    "source": "Acreage Crop Reporting",
+			    "description": "Must use allowable combinations of <a href='Core_Product_Code.html'>Core Product Code</a>, <a href='Core_Product_Type_Code.html'>Core Product Type Code</a>, and <a href='Product_Intended_Use_Code.html'>Product Intended Use Code</a> per the pilot CVT"
+			    }
+			],
+			"definition": "A product code identifying the intended use for an agricultural product such as a crop/commodity, tree, livestock, etc. Codes for intended uses are specific to a particular combination of Core Product Code and Core Product Type Code and are maintained by the Pilot CVT (Crop Validation Table)."
+		},
+
+		{
+			"page_name": "Original_Reported_Acreage",
+			"name": "Original Reported Acreage",
+			"xml_name": "OriginalReportedAcreage",
+			"json_name": "originalReportedAcreage",
+			"source": "Acreage Crop Reporting",
+			"data_type_code": "Decimal",
+			"precision": "8,2",
+			"obligation_code": "Optional",
+			"data_element_example": "103956.15",
+			"representation_class": "Number",
+			"business_rules": [{
+			    "source": "Acreage Crop Reporting",
+			    "description": "Cannot be a negative value"
+			},
+			{
+			    "source": "Acreage Crop Reporting",
+			    "description": "Must equal <a href='Final_Reported_Acreage.html'>Final Reported Acreage</a> when <a href='Reported_Acreage_Modified_Indicator.html'>Reported Acreage Modified Indicator</a> = N"
+			},
+			{
+			    "source": "Acreage Crop Reporting",
+			    "description": "Cannot equal <a href='Final_Reported_Acreage.html'>Final Reported Acreage</a> when <a href='Reported_Acreage_Modified_Indicator.html'>Reported Acreage Modified Indicator</a> = Y"
+			}
+			],
+			"definition": "The original, unmodified, number of acres that were reported."
+		},
+
+		{
+			"page_name": "Final_Reported_Acreage",
+			"name": "Final Reported Acreage",
+			"xml_name": "FinalReportedAcreage",
+			"json_name": "finalReportedAcreage",
+			"source": "Acreage Crop Reporting",
+			"data_type_code": "Decimal",
+			"precision": "8,2",
+			"obligation_code": "Optional",
+			"data_element_example": "103956.15",
+			"representation_class": "Number",
+			"business_rules": [{
+			    "source": "Acreage Crop Reporting",
+			    "description": "Cannot be a negative value"
+			},
+			{
+			    "source": "Acreage Crop Reporting",
+			    "description": "Must equal <a href='Original_Reported_Acreage'>Original Reported Acreage</a> when <a href='Reported_Acreage_Modified_Indicator.html'>Reported Acreage Modified Indicator</a> = N"
+			},
+			{
+			    "source": "Acreage Crop Reporting",
+			    "description": "Cannot equal <a href='Original_Reported_Acreage'>Original Reported Acreage</a> when <a href='Reported_Acreage_Modified_Indicator.html'>Reported Acreage Modified Indicator</a> = Y"
+			}
+			
+			],
+			"definition": "The final number of acres that were reported."
+		},
+
+		{
+			"page_name": "Reported_Acreage_Modified_Indicator",
+			"name": "Reported Acreage Modified Indicator",
+			"xml_name": "ReportedAcreageModifiedIndicator",
+			"json_name": "reportedAcreageModifiedIndicator",
+			"source": "Acreage Crop Reporting",
+			"data_type_code": "Boolean",
+			"min_length": 1,
+			"max_length": 1,
+			"obligation_code": "Optional",
+			"data_element_example": "true",
+			"representation_class": "Indicator",
+			"business_rules": [{
+			    "source": "Acreage Crop Reporting",
+			    "description": "If no geospatial data is attached only allowed value is N"
+			}],
+			"definition": "True if the reported acreage was modified from its original value; false otherwise."
+		},
+
+		{
+			"page_name": "Reported_Acreage_Modified_Reason_Code",
+			"name": "Reported Acreage Modified Reason Code",
+			"xml_name": "ReportedAcreageModifiedReasonCode",
+			"json_name": "reportedAcreageModifiedReasonCode",
+			"source": "Acreage Crop Reporting",
+			"data_type_code": "Code",
+			"min_length": 1,
+			"max_length": 2,
+			"obligation_code": "Optional",
+			"data_element_example": "C",
+			"representation_class": "Indicator",
+			"business_rules": [{
+			    "source": "Acreage Crop Reporting",
+			    "description": "Cannot be populated when <a href='Reported_Acreage_Modified_Indicator.html'>Reported Acreage Modified Indicator</a> = N"
+			},
+			{
+			    "source": "Acreage Crop Reporting",
+			    "description": "Must be populated when <a href='Reported_Acreage_Modified_Indicator.html'>Reported Acreage Modified Indicator</a> = Y"
+			}
+			],
+			
+			"definition": "A reason code identifying the reason that the reported acreage was modified from its original value.",
+			"enumeration": 
+			[
+				{
+					"value_item": "G",
+					"value_definition": "GPS Issue"
+				},
+
+				{
+					"value_item": "C",
+					"value_definition": "Corrected Acres"
+				},
+
+				{
+					"value_item": "MD",
+					"value_definition": "Missing Data"
+				},
+
+				{
+					"value_item": "O",
+					"value_definition": "Other"
+				}
+			]
+		},
+
+		{
+			"page_name": "Reported_Acreage_Modified_Other_Reason_Text",
+			"name": "Reported Acreage Modified Other Reason Text",
+			"xml_name": "ReportedAcreageModifiedOtherReasonText",
+			"json_name": "reportedAcreageModifiedOtherReasonText",
+			"source": "Acreage Crop Reporting",
+			"data_type_code": "String",
+			"min_length": 1,
+			"max_length": 80,
+			"obligation_code": "Optional",
+			"data_element_example": "This change X is the reason why the acreage was modified",
+			"representation_class": "Text",
+			"business_rules": [{
+			    "source": "Acreage Crop Reporting",
+			    "description": "Cannot be populated when <a href='Geospatial_Shape_Modified_Reason_Code.html'>Geospatial Share Modified Reason Code</a> <> O"
+			},
+			{
+			   "source": "Acreage Crop Reporting", 
+			   "description": "Must be populated when <a href='Geospatial_Shape_Modified_Reason_Code.html'>Geospatial Share Modified Reason Code</a> = O "
+			   }
+			],
+			"definition": "An other reason code identifying the reason that the reported acreage was modified from its original value."
+		},
+
+		{
+			"page_name": "Acreage_Calculation_Projection_Code",
+			"name": "Acreage Calculation Projection Code",
+			"xml_name": "AcreageCalculationProjectionCode",
+			"json_name": "acreageCalculationProjectionCode",
+			"source": "Acreage Crop Reporting",
+			"data_type_code": "String",
+			"min_length": 3,
+			"max_length": 5,
+			"obligation_code": "Optional",
+			"data_element_example": "3857",
+			"business_rules": [{
+			    "source": "Acreage Crop Reporting",
+			    "description": "Only populated when geospatial data is submitted"
+			},
+			{
+			    "source": "Acreage Crop Reporting",
+			    "description": "Valid values are 3857, 26901, 26902, 26903, 26904, 26905, 26906, 26907, 26908, 26909, 26910, 26911, 26912, 26913, 26914, 26915, 26916, 26917, 26918, 26919, 26920, 26921, 26922, 26923, 32655, 32702, 32755"
+			}],
+			"enumeration": 
+			[
+				{
+					"value_item": "3857",
+					"value_definition": "WGS84 Web Mercator (Auxiliary Sphere)"
+				},
+
+				{
+					"value_item": "26901",
+					"value_definition": "NAD83 UTM Zone 1N"
+				},
+
+				{
+					"value_item": "26902",
+					"value_definition": "NAD83 UTM Zone 2N"
+				},
+				{
+					"value_item": "26903",
+					"value_definition": "NAD83 UTM Zone 3N"
+				},
+				{
+					"value_item": "26904",
+					"value_definition": "NAD83 UTM Zone 4N"
+				},
+				{
+					"value_item": "26905",
+					"value_definition": "NAD83 UTM Zone 5N"
+				},
+				{
+					"value_item": "26906",
+					"value_definition": "NAD83 UTM Zone 6N"
+				},
+				{
+					"value_item": "26907",
+					"value_definition": "NAD83 UTM Zone 7N"
+				},
+				{
+					"value_item": "26908",
+					"value_definition": "NAD83 UTM Zone 8N"
+				},
+				{
+					"value_item": "26909",
+					"value_definition": "NAD83 UTM Zone 9N"
+				},
+				{
+					"value_item": "26910",
+					"value_definition": "NAD83 UTM Zone 10N"
+				},
+				{
+					"value_item": "26911",
+					"value_definition": "NAD83 UTM Zone 11N"
+				},
+				{
+					"value_item": "26912",
+					"value_definition": "NAD83 UTM Zone 12N"
+				},
+				{
+					"value_item": "26913",
+					"value_definition": "NAD83 UTM Zone 13N"
+				},
+				{
+					"value_item": "26914",
+					"value_definition": "NAD83 UTM Zone 14N"
+				},
+				{
+					"value_item": "26915",
+					"value_definition": "NAD83 UTM Zone 15N"
+				},
+				{
+					"value_item": "26916",
+					"value_definition": "NAD83 UTM Zone 16N"
+				},
+				{
+					"value_item": "26917",
+					"value_definition": "NAD83 UTM Zone 17N"
+				},
+				{
+					"value_item": "26918",
+					"value_definition": "NAD83 UTM Zone 18N"
+				},
+				{
+					"value_item": "26919",
+					"value_definition": "NAD83 UTM Zone 19N"
+				},
+				{
+					"value_item": "26920",
+					"value_definition": "NAD83 UTM Zone 20N"
+				},
+				{
+					"value_item": "26921",
+					"value_definition": "NAD83 UTM Zone 21N"
+				},
+				{
+					"value_item": 26922"",
+					"value_definition": "NAD83 UTM Zone 22N"
+				},
+				{
+					"value_item": "26923",
+					"value_definition": "NAD83 UTM Zone 23N"
+				},
+				{
+					"value_item": "32655",
+					"value_definition": "WGS84 UTM Zone 55N"
+				},
+				{
+					"value_item": "32702",
+					"value_definition": "WGS84 UTM Zone 2S"
+				},
+				{
+					"value_item": "32755",
+					"value_definition": "WGS84 UTM Zone 55S"
+				}
+			],
+			"representation_class": "Code",
+			"definition": "A calculation code identifying the geospatial projection standard used for calculating acreage."
+		},
+
+		{
+			"page_name": "Original_Planted_Date",
+			"name": "Original Planted Date",
+			"xml_name": "OriginalPlantedDate",
+			"json_name": "originalPlantedDate",
+			"source": "Acreage Crop Reporting",
+			"data_type_code": "Date",
+			"pattern": "YYYY-MM-DD",
+			"min_length": 10,
+			"max_length": 10,
+			"obligation_code": "Optional",
+			"data_element_example": "2015-05-01",
+			"representation_class": "Date",
+			"definition": "The original value for the date that a specific crop was planted.",
+			"business_rules": [{
+			    "source": "Acreage Crop Reporting",
+			    "description": "Must be less than the current date (today)."
+			}
+			],
+			
+		},
+
+		{
+			"page_name": "Final_Planted_Date",
+			"name": "Final Planted Date",
+			"xml_name": "FinalPlantedDate",
+			"json_name": "finalPlantedDate",
+			"source": "Acreage Crop Reporting",
+			"data_type_code": "Date",
+			"pattern": "YYYY-MM-DD",
+			"min_length": 10,
+			"max_length": 10,
+			"obligation_code": "Optional",
+			"data_element_example": "2015-06-01",
+			"representation_class": "Date",
+			"business_rules": [{
+			    "source": "Acreage Crop Reporting",
+			    "description": "Must be less than the current date (today)."
+			}
+			],
+			"definition": "The final value for the date that a specific crop was planted."
+		},
+
+		{
+			"page_name": "Planted_Date_Modified_Indicator",
+			"name": "Planted Date Modified Indicator",
+			"xml_name": "PlantedDateModifiedIndicator",
+			"json_name": "plantedDateModifiedIndicator",
+			"source": "Acreage Crop Reporting",
+			"data_type_code": "Boolean",
+			"obligation_code": "Optional",
+			"data_element_example": "true",
+			"representation_class": "Indicator",
+			"definition": "True if the planted date was modified from its original value; false otherwise.",
+			"enumeration": 
+			[
+				{
+					"value_item": "true",
+					"value_definition": "True"
+				},
+
+				{
+					"value_item": "false",
+					"value_definition": "False"
+				}
+			]
+		},
+
+		{
+			"page_name": "Planted_Date_Modified_Reason_Code",
+			"name": "Planted Date Modified Reason Code",
+			"xml_name": "plantedDateModifiedReasonCode",
+			"json_name": "plantedDateModifiedReasonCode",
+			"source": "Acreage Crop Reporting",
+			"data_type_code": "Code",
+			"min_length": 1,
+			"max_length": 2,
+			"obligation_code": "Optional",
+			"data_element_example": "MP",
+			"representation_class": "Code",
+			"definition": "A code identifying the reason that a planted date was modified from its original value.",
+		"enumeration": 
+			[
+				{
+					"value_item": "MP",
+					"value_definition": "Multiple Planting Dates"
+				},
+
+				{
+					"value_item": "C",
+					"value_definition": "Correction"
+				},
+
+				{
+					"value_item": "O",
+					"value_definition": "Other"
+				}
+			]
+		},
+
+		{
+			"page_name": "Planted_Date_Modified_Other_Reason_Text",
+			"name": "Planted Date Modified Other Reason Text",
+			"xml_name": "PlantedDateModifiedOtherReasonText",
+			"json_name": "plantedDateModifiedOtherReasonText",
+			"source": "Acreage Crop Reporting",
+			"data_type_code": "String",
+			"min_length": 1,
+			"max_length": 80,
+			"obligation_code": "Optional",
+			"data_element_example": "The reason for changing the plant data is because of XYZ.",
+			"representation_class": "Indicator",
+			"definition": "A free form text providing the reason that a planted date was modified from its original value when a reason other than the possible list of provided reasons is needed."
+		},
+
+		{
+			"page_name": "Product_Planting_Code",
+			"name": "Product Planting Code",
+			"xml_name": "ProductPlantingCode",
+			"json_name": "productPlantingCode",
+			"source": "Acreage Crop Reporting",
+			"data_type_code": "Code",
+			"min_length": 1,
+			"max_length": 1,
+			"obligation_code": "Optional",
+			"data_element_example": "F",
+			"representation_class": "Code",
+			"definition": "A code identifying the planting of a product/crop as either conventional (plannted as normal or no planting required) or unconventional/irregular in a predefined way.",
+		"enumeration": 
+			[
+				{
+					"value_item": "F",
+					"value_definition": "Failed Acreage (acreage that was timely planted with the intent to harvest, but because of disaster related conditions, the crop failed before it could be brought to harvest)."
+				},
+
+				{
+					"value_item": "P",
+					"value_definition": "Prevented Planted (the inability to plant the intended crop acreage with proper equipment by the final planting date for the crop type because of a natural disaster). "
+				},
+
+				{
+					"value_item": "V",
+					"value_definition": "Volunteer. A crop that was planted in a previous crop year on the applicable acreage or drifted from other acreage, successfully self-seeded, and is growing this crop year on the applicable acreage without being intentionally sown or managed."
+				}
+			]
+		},
+
+		{
+			"page_name": "Irrigation_Practice_Code",
+			"name": "Irrigation Practice Code",
+			"xml_name": "IrrigationPracticeCode",
+			"json_name": "irrigationPracticeCode",
+			"source": "Acreage Crop Reporting",
+			"data_type_code": "Code",
+			"min_length": 1,
+			"max_length": 1,
+			"obligation_code": "Mandatory",
+			"data_element_example": "I",
+			"representation_class": "Code",
+			"definition": "A code identifying the irrigation practice used for a unit of land with a cropCode identifying the irrigation practice used for a unit of land with a crop.",
+		"enumeration": 
+			[
+				{
+					"value_item": "I",
+					"value_definition": "Irrigated"
+				},
+
+				{
+					"value_item": "N",
+					"value_definition": "Non-Irrigated"
+				}
+			]
+		},
+
+		{
+			"page_name": "Organic_Practice_Type_Code",
+			"name": "Organic Practice Type Code",
+			"xml_name": "OrganicPracticeTypeCode",
+			"json_name": "organicPracticeTypeCode",
+			"source": "Acreage Crop Reporting",
+			"data_type_code": "Code",
+			"min_length": 1,
+			"max_length": 2,
+			"obligation_code": "Mandatory",
+			"data_element_example": "N",
+			"representation_class": "Code",
+			"definition": "A code representing the type of certification for farm acreage in regards to a system/plan of production and handling practice to produce an organic commodity.",
+		"enumeration": 
+			[
+				{
+					"value_item": "N",
+					"value_definition": "Not Specified (Conventional)"
+				},
+
+				{
+					"value_item": "OC",
+					"value_definition": "Organic (USDA Certified)"
+				},
+
+				{
+					"value_item": "OT",
+					"value_definition": "OT - Organic (Transitional)"
+				}
+			]
+		},
+
+		{
+			"page_name": "Cropping_Practice_Code",
+			"name": "Cropping Practice Code",
+			"xml_name": "CroppingPracticeCode",
+			"json_name": "croppingPracticeCode",
+			"source": "Acreage Crop Reporting",
+			"data_type_code": "Code",
+			"obligation_code": "Mandatory",
+			"data_element_example": "108",
+			"representation_class": "Code",
+			"enumeration": 
+			[
+				{
+					"value_item": "4",
+					"value_definition": "Continuous Cropping"
+				},
+                {
+					"value_item": "5",
+					"value_definition": "Summer Fallow"
+				},
+				{
+					"value_item": "6",
+					"value_definition": "Water Fallow"
+				},
+
+				{
+					"value_item": "19",
+					"value_definition": "Following Another Crop"
+				},
+				{
+					"value_item": "30",
+					"value_definition": "Fall Planted"
+				},
+				{
+					"value_item": "46",
+					"value_definition": "Spring Planted"
+				},
+				{
+					"value_item": "108",
+					"value_definition": "Non-Conventional"
+				},
+				{
+					"value_item": "120",
+					"value_definition": "Not Following Another Crop"
+				},
+				{
+					"value_item": "210",
+					"value_definition": "Standard Planting"
+				},
+				{
+					"value_item": "211",
+					"value_definition": "Winter Planted"
+				},
+				{
+					"value_item": "220",
+					"value_definition": "Interplanting"
+				},
+				{
+					"value_item": "997",
+					"value_definition": "No Cropping Practice Specified"
+				}
+			],
+			"definition": "A code identifying the cropping practice applicable for a reported crop/commodity on a field/subfield."
+		},
+		                        
+		{
+			"page_name": "Producer_Share",
+			"name": "Producer Share",
+			"xml_name": "ProducerShare",
+			"json_name": "producerShare",
+			"data_type_code": "Container",
+			"definition": "A share in the benefits that a producer has from a specific agricultural production plan."
+},
+		{
+			"page_name": "Producer_Share_Percent",
+			"name": "Producer Share Percent",
+			"xml_name": "Producer Share Percent",
+			"json_name": "Producer Share Percent",
+			"source": "Acreage Crop Reporting",
+			"data_type_code": "Decimal",
+			"precision": "5,4",
+			"obligation_code": "Mandatory",
+			"data_element_example": "0.50",
+			"representation_class": "Percent",
+			"definition": "A Producer's share of a crop and the benefits coming from that crop, expressed as a percentage."
+		},
+
+{
+			"page_name": "Geospatial_Source_Information",
+			"name": "Geospatial Source Information",
+			"xml_name": "GeospatialSourceInfo",
+			"json_name": "geospatialSourceInfo",
+			"data_type_code": "Container",
+			"definition": "A set of source information about geospatial details related to an agricultural production plan."
+},
+		{
+			"page_name": "Geospatial_Shape_Source_Code",
+			"name": "Geospatial Shape Source Code",
+			"xml_name": "GeospatialShapeSourceCode",
+			"json_name": "geospatialShapeSourceCode",
+			"source": "Acreage Crop Reporting",
+			"data_type_code": "Code",
+			"min_length": 1,
+			"max_length": 1,
+			"obligation_code": "Mandatory",
+			"data_element_example": "B",
+			"representation_class": "Code",
+			"definition": "A code identifying the source data used to create a geospatial shape/polygon.",
+		"enumeration": 
+			[
+				{
+					"value_item": "B",
+					"value_definition": "Field Boundaries:  Polygon is based on the outer boundaries of the field (i.e., vehicle GPS capabilities)"
+				},
+
+				{
+					"value_item": "C",
+					"value_definition": "CLU:  Existing FSA CLU was used to provide the shape/polygon"
+				},
+
+				{
+					"value_item": "F",
+					"value_definition": "FMIS:  Shape/polygon has been created by the producer’s Farm Management Information System"
+				},
+
+				{
+					"value_item": "R",
+					"value_definition": "Raw Controller File:  Shape/polygon has been created from a producer submitted raw controller file"
+				},
+
+				{
+					"value_item": "D",
+					"value_definition": "Digitized:  Third party provider/producer has drawn/digitized the shape/polygon"
+				}
+			]
+		},
+
+		{
+			"page_name": "Geospatial_Shape_Modified_Indicator",
+			"name": "Geospatial Shape Modified Indicator",
+			"xml_name": "geospatialShapeModifiedIndicator",
+			"json_name": "geospatialShapeModifiedIndicator",
+			"source": "Acreage Crop Reporting",
+			"data_type_code": "Boolean",
+			"obligation_code": "Optional",
+			"data_element_example": "true",
+			"representation_class": "Indicator",
+			"definition": "True if the geospatial shape/polygon was modified from its original value; false otherwise."
+		},
+
+		{
+			"page_name": "Geospatial_Shape_Modified_Reason_Code",
+			"name": "Geospatial Shape Modified Reason Code",
+			"xml_name": "GeospatialShapeModifiedReasonCode",
+			"json_name": "geospatialShapeModifiedReasonCode",
+			"source": "Acreage Crop Reporting",
+			"data_type_code": "Code",
+			"min_length": 1,
+			"max_length": 2,
+			"obligation_code": "Optional",
+			"data_element_example": "G",
+			"representation_class": "Code",
+			"definition": "A code identifying the reason that a geospatial shape/polygon was modified from its original shape.",
+		"enumeration": 
+			[
+				{
+					"value_item": "G",
+					"value_definition": "GPS Issue"
+				},
+
+				{
+					"value_item": "C",
+					"value_definition": "Corrected Acres Calculation Difference"
+				},
+
+				{
+					"value_item": "MD",
+					"value_definition": "Missing Data"
+				},
+
+				{
+					"value_item": "S",
+					"value_definition": "Shape Drawn Incorrectly"
+				},
+
+				{
+					"value_item": "O",
+					"value_definition": "Other"
+				}
+			]
+		},
+
+		{
+			"page_name": "Geospatial_Shape_Modified_Other_Reason_Text",
+			"name": "Geospatial Shape Modified Other Reason Text",
+			"xml_name": "GeospatialShapeModifiedOtherReasonText",
+			"json_name": "geospatialShapeModifiedOtherReasonText",
+			"source": "Acreage Crop Reporting",
+			"data_type_code": "String",
+			"min_length": 1,
+			"max_length": 80,
+			"obligation_code": "Optional",
+			"data_element_example": "The reason for the change in geospatial is XYZ.",
+			"representation_class": "Indicator",
+			"definition": "A free form text providing the reason that a geospatial shape was modified from its original form when a reason other than the possible list of provided reasons is needed."
+		},
+
+		{
+			"page_name": "Geospatial_Shape_Process_Date",
+			"name": "Geospatial Shape Process Date",
+			"xml_name": "GeospatialShapeProcessDate",
+			"json_name": "geospatialShapeProcessDate",
+			"source": "Acreage Crop Reporting",
+			"data_type_code": "Date",
+			"pattern": "YYYY-MM-DD",
+			"min_length": 10,
+			"max_length": 10,
+			"obligation_code": "Mandatory",
+			"data_element_example": "2016-07-10",
+			"representation_class": "Date",
+			"definition": "A date that a geospatial shape/polygon was created, either from processing raw data or from manual entry."
+		},
+
+		{
+			"page_name": "Geospatial_Data_Submission_Method_Code",
+			"name": "Geospatial Data Submission Method Code",
+			"xml_name": "geospatialDataSubmissionMethodCode",
+			"json_name": "geospatialDataSubmissionMethodCode",
+			"source": "Acreage Crop Reporting",
+			"data_type_code": "Code",
+			"min_length": 1,
+			"max_length": 1,
+			"obligation_code": "Optional",
+			"data_element_example": "G",
+			"representation_class": "Code",
+			"definition": "A code identifying the method used to submit geospatial data used to create a geospatial shape/polygon.",
+		"enumeration": 
+			[
+				{
+					"value_item": "C",
+					"value_definition": "CLU - Existing FSA CLU is used to provide the shape/polygon"
+				},
+
+				{
+					"value_item": "G",
+					"value_definition": "GIS Algorithm – GIS algorithm used by third party provider/producer system to create operational boundaries based on raw data collection method (MICS, FMIS)"
+				},
+
+				{
+					"value_item": "D",
+					"value_definition": "Digitized - Third party provider/producer has drawn/digitized the shape/polygon"
+				}
+			]
+		},
+
+		{
+			"page_name": "MICS_Code",
+			"name": "Mobile Implement Control System Code",
+			"xml_name": "MICSCode",
+			"json_name": "micsCode",
+			"source": "Acreage Crop Reporting",
+			"data_type_code": "Code",
+			"min_length": 1,
+			"max_length": 3,
+			"obligation_code": "Mandatory",
+			"data_element_example": "G",
+			"representation_class": "Code",
+			"definition": "A code identifying the Mobile Implement Control System (MICS) used in the collection of geospatial data.",
+		"enumeration": 
+			[
+				{
+					"value_item": "AG",
+					"value_definition": "AGCO"
+				},
+
+				{
+					"value_item": "AL",
+					"value_definition": "AgLeader"
+				},
+
+				{
+					"value_item": "CNH",
+					"value_definition": "ase IH/Ford/New Holland"
+				},
+
+				{
+					"value_item": "FS",
+					"value_definition": "FSA"
+				},
+
+				{
+					"value_item": "JD",
+					"value_definition": "John Deere"
+				},
+
+				{
+					"value_item": "PP",
+					"value_definition": "Precision Planting"
+				},
+
+				{
+					"value_item": "RA",
+					"value_definition": "Raven"
+				},
+
+				{
+					"value_item": "TR",
+					"value_definition": "Trimble"
+				},
+
+				{
+					"value_item": "O",
+					"value_definition": "Other"
+				},
+
+				{
+					"value_item": "UN",
+					"value_definition": "Unknown"
+				}
+			]
+		},
+
+		{
+			"page_name": "MICS_Name",
+			"name": "Mobile Implement Control System Name",
+			"xml_name": "micsName",
+			"json_name": "micsName",
+			"source": "Acreage Crop Reporting",
+			"data_type_code": "String",
+			"min_length": 1,
+			"max_length": 20,
+			"obligation_code": "Optional",
+			"data_element_example": "",
+			"representation_class": "Name",
+			"definition": "A code name identifying the Mobile Implement Control System (MICS) used in the collection of geospatial data."
+		},
+
+		{
+			"page_name": "Geospatial_Source_Data_Creation_Date",
+			"name": "Geospatial Source Data Creation Date",
+			"xml_name": "GeospatialSourceDataCreationDate",
+			"json_name": "geospatialSourceDataCreationDate",
+			"source": "Acreage Crop Reporting",
+			"data_type_code": "DateTime",
+			"pattern": "YYYY-MM-DDTHH:MM:SSZ",
+			"min_length": 20,
+			"max_length": 20,
+			"obligation_code": "Mandatory",
+			"data_element_example": "",
+			"representation_class": "Date",
+			"definition": "A date when the data that was used as a source for geospatial data being considered. For geospatial data sourced by means of Precision Agriculture, this is the date the raw data was collected by the equipment. For geospatial data that was created from an existing Common Land Unit (CLU) shape, this is the date the source CLU was created."
+		},
+
+		{
+			"page_name": "Precision_Agricultural_Sub_Meter_Accuracy_Indicator",
+			"name": "Precision Agricultural Sub-meter Accuracy Indicator",
+			"xml_name": "PrecisionAgriculturalSubMeterAccuracyIndicator",
+			"json_name": "precisionAgriculturalSubMeterAccuracyIndicator",
+			"source": "Acreage Crop Reporting",
+			"data_type_code": "Boolean",
+			"min_length": 1,
+			"max_length": 1,
+			"obligation_code": "Mandatory",
+			"data_element_example": "Y",
+			"representation_class": "Indicator",
+			"definition": "True if geospatial data collected from Precision Agriculture technology has horizontal coordinate measurements that are accurate within a sub meter; false otherwise."
+		},
+		{
+			"page_name": "Location_Polygon_Coordinates",
+			"name": "Location Polygon Coordinates",
+			"xml_name": "LocationPolygonCoordinates",
+			"json_name": "locationPolygonCoordinates",
+			"db_name": "",
+			"source": "",
+			"object_class": "",
+			"data_type_code": "",
+			"representation_class": "",
+			"data_element_example": "",
+			"obligation_code": "",
+			"definition": "A gml:Polygon is a special surface that is defined by a single surface patch. The boundary of this patch is coplanar and the polygon uses planar interpolation in its interior."
+},
+{
+			"page_name": "Location_Multi_Surface_Coordinates",
+			"name": "Location Multi-Surface Coordinates",
+			"xml_name": "LocationMultiSurfaceCoordinates",
+			"json_name": "",
+			"db_name": "",
+			"source": "",
+			"object_class": "",
+			"data_type_code": "",
+			"representation_class": "",
+			"data_element_example": "",
+			"obligation_code": "",
+			"definition": "A geometry collection that includes one or more Polygons or Surfaces."
+			},
+
+		{
+			"page_name": "Originator_Identification",
+			"name": "Originator Identification",
+			"xml_name": "OriginatorIdentification",
+			"json_name": "originatorIdentification",
+			"db_name": "ORIGINATOR_ID",
+			"source": "Acreage Crop Reporting",
+			"data_type_code": "String",
+			"min_length": 0,
+			"max_length": 6,
+			"business_rules":[{
+			    "source": "Acreage Crop Reporting",
+			    "description": "The first letter of 'originatorIdentification' must be any of these values 'A','F','T'",
+			    "rule_number": "ACRSI-002-01",
+			    "status": "Active"
+			   },
+			   {
+			      "source": "Acreage Crop Reporting",
+			      "description": "Value for the channels:  AIP -> 'A'+ 2 digit RMA code,  County office-> 'F'+ State Code+County Code, Third Party-> 'T'+ assign site id Note: validation against list of RMA codes, FSA ST/Co, Thirdparty - TMYA]",
+			      "rule_number": "ACRSI-002-03",
+			      "status":"Active"
+			}],
+			"representation_class": "Identifier",
+			"data_element_example": "Examples of an Originator are a FSA Service Center, Approved Insurance Provider (AIP), and Third Party Sites. The identification consists of a prefix indicating the type of Originator, followed by an identification that uniquely identifies the Originator for that type.<br/>For FSA Service Center Originators, the following format is used:<br/>F<State FSA Code><County FSA Code><br/>For AIP Originators, the following format is used:<br/>A<Unique 2-digit RMA Code><br/>For Third Party Site Originators, the following format is used:<br/>T<Assigned Third Party Site ID>",
+			"obligation_code": "Mandatory",
+			"definition": "An identification of the entity responsible for originating/publishing data.<br/><br/>For Acreage Reporting it identifies the FSA Service Center, Approved Insurance Provider (AIP), or Third Party Site which collected and published the acreage data and any accompanying geospatial data.<br/><br/>The identification consists of a prefix indicating the type of Originator, followed by an  identification that uniquely identifies the Originator for that type."
+				},
+
+         {
+			"page_name": "Customer_Information",
+			"name": "Customer Information",
+			"xml_name": "CustomerInformation",
+			"json_name": "customer",
+			"data_type_code": "Container",
+			"definition": "An individual, corporation, partnership, association, tribe, unit of government, Conservation District, or other organization with which a USDA Service Center has had, or may have, business."
+        },
+		{
+			"page_name": "File_Customer_Identifier",
+			"name": "File Customer Identifier",
+			"xml_name": "FileCustomerIdentifier",
+			"json_name": "fileCustomerIdentifier",
+			"source": "Acreage Crop Reporting",
+			"data_type_code": "Integer",
+			"min_length": 1,
+			"max_length": 2,
+			"obligation_code": "Mandatory",
+			"data_element_example": "2",
+			"representation_class": "Identifier",
+			"business_rules":[{
+			   "source": "Acreage Crop Reporting",
+			   "description": "fileCustomerIdentifier' must be >0  and uniquely (no duplication) refers to the customer in the customer Entity inside the JSON file",
+			}],
+			"definition": "An internal identifier uniquely identifying a customer within a specific file. Each unique customer within a given file will have a unique File Customer Identifier. File Customer Identifier values are not unique across files."
+		},
+
+		{
+			"page_name": "Interagency_Customer_Identifier",
+			"name": "Customer Inter-Agency Identifier",
+			"xml_name": "CustomerInterAgencyIdentificationID",
+			"json_name": "interagencyCustomerIdentifier",
+			"source": "Acreage Crop Reporting",
+			"data_type_code": "Integer",
+			"min_length": 1,
+			"max_length": 2,
+			"obligation_code": "Optional",
+			"data_element_example": "",
+			"representation_class": "Identifier",
+			"business_rules":[{
+			   "source": "Acreage Crop Reporting",
+			   "description": "Populated with active CCID associated with a <a href='Tax_Identification.html'>TIN</a> and <a href='Tax_Identification_Type_Code.html'>TIN Type</a>"
+			}],
+			"definition": "A system generated, unique internal identifier used between agencies to identify a USDA customer (individual or business).<br/><br/>Currently SCIMS Core Customer Identifier is the source value. This will change if a different customer unique identifier is adopted."
+				},
+
+		{
+			"page_name": "Tax_Identification",
+			"name": "Tax Identification",
+			"xml_name": "TaxIdentification",
+			"json_name": "taxIdentification",
+			"source": "Acreage Crop Reporting",
+			"data_type_code": "String",
+			"min_length": 9,
+			"max_length": 9,
+			"obligation_code": "Optional",
+			"data_element_example": "2",
+			"representation_class": "Identifier",
+			"business_rules":[{
+			    "source": "Acreage Crop Reporting",
+			    "description": "It must be populated if <a href='Interagency_Customer_Identifier.html'>Interagency Customer Identifier</a> is null"
+				},
+				{
+				"source": "Acreage Crop Reporting",
+				"description": "It must be null if <a href='Interagency_Customer_Identifier.html'>Interagency Customer Identifier</a> is populated"
+				}
+				
+			],
+			"definition": "A tax identification assigned to a specific individual, business or other entity and is used to authenticate the individual/entity for matters of taxation and other federal governement business.<br/>Tax Identification may be a Social Security or Employer Identification number.<br/><br/>Federal Tax Identification is not necessarily unique for all United States Department of Agriculture (USDA) customers unless it is combined with a Tax Identification Type Code."
+		},
+
+		{
+			"page_name": "Tax_Identification_Type_Code",
+			"name": "Tax Identification Type Code",
+			"xml_name": "TaxIdentificationTypeCode",
+			"json_name": "taxIdentificationTypeCode",
+			"source": "Acreage Crop Reporting",
+			"data_type_code": "Integer",
+			"min_length": 1,
+			"max_length": 1,
+			"obligation_code": "Optional",
+			"data_element_example": "2",
+			"representation_class": "Code",
+			"business_rules": [
+			   {
+				"source": "Acreage Crop Reporting",
+				"description": "It must be populated if <a href='Interagency_Customer_Identifier.html'>Interagency Customer Identifier</a> is null"
+				},
+				{
+				 "source": "Acreage Crop Reporting",
+				 "description": "It must be null if <a href='Interagency_Customer_Identifier.html'>Interagency Customer Identifier</a> is populated"
+				 }
+				   
+			],
+			"definition": "A type code identifying the type of identification assigned to a specific individual, business or other entity and is used to authenticate the individual/entity for matters of taxation and other governement business.",
+			"enumeration": 
+			[
+				{
+					"value_item": "1",
+					"value_definition": "Social Security Number (SSN)"
+				},
+
+				{
+					"value_item": "2",
+					"value_definition": "Employer Id Number (EIN)"
+				}
+			]
+		},
+		
+		{
+			"page_name": "BusinessName",
+			"name": "Business Name",
+			"xml_name": "BusinessName",
+			"json_name": "businessName",
+			"source": "Acreage Crop Reporting",
+			"data_type_code": "String",
+			"min_length": 1,
+			"max_length": 100,
+			"obligation_code": "Optional",
+			"data_element_example": "Acme Grain Inc",
+			"representation_class": "Name",
+			"definition": "The name of a non-individual which transacts business with a USDA office. This can be a business, group, partnership, family-owned farm or ranch, etc. to which the servicing office provides assistance.  In the case of a family farm or ranch operation, the business name can be the same as the individual's name."
+		},
+
+		{
+			"page_name": "firstName",
+			"name": "First Name",
+			"xml_name": "FirstName",
+			"json_name": "firstName",
+			"source": "Acreage Crop Reporting",
+			"data_type_code": "String",
+			"min_length": 1,
+			"max_length": 20,
+			"obligation_code": "Optional",
+			"data_element_example": "Wily",
+			"representation_class": "Name",
+			"definition": "The first name in the full (multi-part) name of an individual (person) or entity."
+		},
+
+		{
+			"page_name": "Middle_Name",
+			"name": "Middle Name",
+			"xml_name": "MiddleName",
+			"json_name": "middleName",
+			"source": "Acreage Crop Reporting",
+			"data_type_code": "String",
+			"min_length": 1,
+			"max_length": 20,
+			"obligation_code": "Optional",
+			"data_element_example": "E.",
+			"representation_class": "Name",
+			"definition": "The middle (or second, or alternate) name in the full (multi-part) name of an individual or entity."
+		},
+
+		{
+			"page_name": "Last_Name",
+			"name": "Last Name",
+			"xml_name": "LastName",
+			"json_name": "lastName",
+			"source": "Acreage Crop Reporting",
+			"data_type_code": "String",
+			"min_length": 1,
+			"max_length": 25,
+			"obligation_code": "Optional",
+			"data_element_example": "Coyote",
+			"representation_class": "Name",
+			"definition": "Last name in the full name (multi-part) of an individual (person) or entity."
+		},
+
+		{
+			"page_name": "Name_Suffix",
+			"name": "Name Suffix",
+			"xml_name": "Name_Suffix",
+			"json_name": "nameSuffix",
+			"source": "Acreage Crop Reporting",
+			"data_type_code": "String",
+			"min_length": 1,
+			"max_length": 10,
+			"obligation_code": "Optional",
+			"data_element_example": "C",
+			"representation_class": "Name",
+			"definition": "A free-form optional suffix used in an individual's name.   The following list comprises the suggested domain.  However, the user should be able to type in entries not found in this list.<br/>DOMAIN:    Jr, Sr, I, II, III, MD",
+			"enumeration": 
+			[
+				{
+					"value_item": "Jr",
+					"value_definition": "Junior"
+				},
+
+				{
+					"value_item": "Sr",
+					"value_definition": "Senior"
+				},
+
+				{
+					"value_item": "I",
+					"value_definition": "First"
+				},
+
+				{
+					"value_item": "II",
+					"value_definition": "Second"
+				},
+
+				{
+					"value_item": "III",
+					"value_definition": "Third"
+				},
+
+				{
+					"value_item": "Md",
+					"value_definition": "Doctor"
+				}
+			]
+		},
+		{
+			"page_name": "Acreage_Submission_File",
+			"name": "Acreage Submission File",
+			"xml_name": "AcreageSubmissionFile",
+			"json_name": "acreageSubmissionFile",
+			"db_name": "",
+			"source": "Acreage Reporting",
+			"object_class": "",
+			"data_type_code": "Container",
+			"obligation_code": "Mandatory",
+			"business_rules":[{
+			    "source": "Acreage Crop Reporting", 
+			    "description": "This element contains <a href='Crop_Year.html'>Crop Year</a>, <a href='Originator_Identification_Identifier.html'>Originator Identification Identifier</a>, <a href='Customer_Information.html'>Customer Information</a> and <a href='Farm_Crop_Acreage'>Farm Crop Acreage</a>.",
+			    "status": "Active",
+			    "rule_number": ""
+			 }],
+			"definition": "A file that is submitted to the crop acreage clearinghouse providing a detailed report regarding the crops planted on a farm, itemized down to the acreage of individual fields and subfields and the individual producer stakeholders."
+        }, 
+        {
+			"page_name": "Field_Crop_Acreage",
+			"name": "Field Crop Acreage",
+			"json_name": "field",
+			"xml_name": "FieldCropAcreage",
+			"data_type_code": "Container",
+			"obligation_code": "Mandatory",
+			"definition": "A field of land within a tract on which groupings of crops can be planted."
+},
+        {
+			"page_name": "Farm_Crop_Acreage",
+			"name": "Farm Crop Acreage",
+			"xml_name": "FarmCropAcreage",
+			"json_name": "farm",
+			"source": "Acreage Crop Reporting",
+			"data_type_code": "Container",
+			"obligation_code": "Mandatory",
+			"children":[
+			{
+			   "data_element": "AdministrativeStateFSACode",
+			   "mandatory": true,
+			},
+			{
+			   "data_element": "AdministrativeCountyFSACode",
+			   "mandatory": true,
+			},
+			{
+			   "data_element": "FarmNumberID",
+			   "mandatory": true,
+			},
+			{
+			   "data_element": "TractCropAcreage",
+			   "mandatory": true,
+			}
+			],
+			"definition": "A Farm within Farm Service Agency (FSA) state and county that contains a number of tracts fields and subfields on which crop acreage details have been reported."
+		},
+		{
+			"page_name": "Tract_Crop_Acreage",
+			"name": "Tract Crop Acreage",
+			"xml_name": "TractCropAcreage",
+			"json_name": "tract",
+			"data_type_code": "Container",
+			"definition": "A tract of land within a farm that contains a number of fields and subfields on which crop acreage details have been reported."
+}
+	]
+}

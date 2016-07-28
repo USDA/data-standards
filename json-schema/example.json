@@ -1,0 +1,46 @@
+{
+   "@context": "http://localhost:4000/json-schema/acrsi_submission.json#",
+   "@type": "ag:ACRSI_Submission",
+   "cropYear": "2016",
+   "originatorIdentification": "123456",
+   "farm": [
+     {
+      "administrativeStateFsaCode": "12",
+      "administrativeCountyFsaCode": "123",
+      "farmNumber": "1234567",
+      "tract": [{
+         "tractNumber": "1234567",
+         "field": [
+         {
+            "fieldNumber": "1234567",
+         	"cluIdentifier": "1234567",
+         	"cluProducerReviewRequestIndicator": "Y",
+         	"agriculturalProductionPlan": [{
+         		"stateAnsiCode": "dc",
+         		"countyAnsiCode": "abc",
+         		"coreProductCode": "12",
+         		"coreProductTypeCode": "1234",
+         		"irrigationPracticeCode": "I",
+         		"organicPracticeTypeCode": "N",
+         		"croppingPracticeCode": "123",
+         		"producerShare":[
+         		 	{
+         				"producerSharePercent": "10.2"
+         			}
+         		],
+         		"geospatialMetadata":{
+         			"geospatialShapeSourceCode": "B",
+         			"geospatialShapeProcessDate": "20150405",
+         			"micsCode": "AG",
+         			"geospatialSourceDataCreationDate": "2015-04-05T10:00S12:",
+         			"precisionAgriculturalSubMeterAccuracyIndicator": "Y"
+         		}
+         	}]
+         }]
+      }]
+   }
+   ],
+   "customer": [{
+      "fileCustomerIdentifier": "1"
+   }]
+}

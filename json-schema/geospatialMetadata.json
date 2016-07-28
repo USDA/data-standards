@@ -1,0 +1,127 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "http://localhost:4000/json-schema/geospatialMetadata.json#",
+	"title": "ACRSI Data Submission",
+	"description": "",
+	"type": "object",
+	"required": [
+		"geospatialShapeSourceCode",
+		"geospatialShapeProcessDate",
+		"micsCode",
+		"geospatialSourceDataCreationDate",
+		"precisionAgriculturalSubMeterAccuracyIndicator"
+	],
+	"properties": {
+		"@type": {
+			"title": "Metadata Context",
+			"description": "IRI for the JSON-LD data type. This should be ag:Farm",
+			"enum": [
+				"ag:GeospatialMetadata"
+			]
+		},
+		"geospatialShapeSourceCode": {
+			"title": "Geospatial Shape Source Code",
+			"description": "Code identifying the source data used to create a geospatial shape/polygon.<br/>B = Field Boundaries:  Polygon is based on the outer boundaries of the field (i.e., vehicle GPS capabilities)<br/>C = CLU:  Existing FSA CLU was used to provide the shape/polygon<br/>F = FMIS:  Shape/polygon has been created by the producer’s Farm Management Information System<br/>R = Raw Controller File:  Shape/polygon has been created from a producer submitted raw controller file<br/>D = Digitized:  Third party provider/producer has drawn/digitized the shape/polygon",
+			"enum": [
+				"B",
+				"C",
+				"F",
+				"R",
+				"D"
+			],
+			"type": "string",
+			"minLength": 1,
+			"maxLength": 1
+		},
+		"geospatialShapeModifiedIndicator": {
+			"title": "Geospatial Shape Modified Indicator",
+			"description": "Indicates whether the geospatial shape/polygon was modified from its original value. Y =Yes N = No",
+			"type": "string",
+			"minLength": 1,
+			"maxLength": 1
+		},
+		"geospatialShapeModifiedReasonCode": {
+			"title": "Geospatial Shape Modified Reason Code",
+			"description": "Code identifying the reason that a geospatial shape/polygon was modified from its original shape.<br/>G = GPS Issue<br/>C = Corrected Acres Calculation Difference<br/>MD = Missing Data<br/>S = Shape Drawn Incorrectly<br/>O = Other",
+			"enum": [
+				"G",
+				"C",
+				"MD",
+				"S",
+				"O"
+			],
+			"type": "string",
+			"minLength": 1,
+			"maxLength": 2
+		},
+		"geospatialShapeModifiedOtherReasonText": {
+			"title": "Geospatial Shape Modified Other Reason Text",
+			"description": "Freeform text providing the reason that a geospatial shape was modified from its original form when a reason other than the possible list of provided reasons is needed.",
+			"type": "string",
+			"minLength": 1,
+			"maxLength": 80
+		},
+		"geospatialShapeProcessDate": {
+			"title": "Geospatial Shape Process Date",
+			"description": "The date that a geospatial shape/polygon was created, either from processing raw data or from manual entry.",
+			"type": "string",
+			"minLength": 4,
+			"maxLength": 8
+		},
+		"geospatialDataSubmissionMethodCode": {
+			"title": "Geospatial Data Submission Method Code",
+			"description": "Code identifying the method used to submit geospatial data used to create a geospatial shape/polygon. <br/>C= CLU - Existing FSA CLU is used to provide the shape/polygon<br/>G= GIS Algorithm – GIS algorithm used by third party provider/producer system to create operational boundaries based on raw data collection method (MICS, FMIS)<br/>D= Digitized - Third party provider/producer has drawn/digitized the shape/polygon",
+			"enum": [
+				"C",
+				"G",
+				"D"
+			],
+			"type": "string",
+			"minLength": 1,
+			"maxLength": 1
+		},
+		"micsCode": {
+			"title": "MICS Code",
+			"description": "Code identifying the Mobile Implement Control System (MICS) used in the collection of geospatial data.<br/>AG = AGCO<br/>AL = AgLeader<br/>CNH = Case IH/Ford/New Holland<br/>FS = FSA<br/>JD = John Deere<br/>PP = Precision Planting<br/>RA = Raven<br/>TR = Trimble<br/>O = Other<br/>UN  = Unknown",
+			"enum": [
+				"AG",
+				"AL",
+				"CNH",
+				"FS",
+				"JD",
+				"PP",
+				"RA",
+				"TR",
+				"O",
+				"UN"
+			],
+			"type": "string",
+			"minLength": 1,
+			"maxLength": 3
+		},
+		"micsName": {
+			"title": "MICS Name",
+			"description": "Name of the Mobile Implement Control System (MICS) used in the collection of geospatial data.",
+			"type": "string",
+			"minLength": 1,
+			"maxLength": 20
+		},
+		"geospatialSourceDataCreationDate": {
+			"title": "Geospatial Source Data Creation Date",
+			"description": "The creation date of the data that was used as a source for geospatial data being considered. For geospatial data sourced by means of Precision Agriculture, this is the date the raw data was collected by the equipment. For geospatial data that was created from an existing Common Land Unit (CLU) shape, this is the date the source CLU was created.",
+			"type": "string",
+			"minLength": 20,
+			"maxLength": 20
+		},
+		"precisionAgriculturalSubMeterAccuracyIndicator": {
+			"title": "Precision Agricultural Sub Meter Accuracy Indicator",
+			"description": "Indicates whether geospatial data collected from Precision Agriculture technology has horizontal coordinate measurements that are accurate within a sub meter.  Y =Yes N = No",
+			"type": "string",
+			"minLength": 1,
+			"maxLength": 1
+		},
+		"geoJson": {
+			"$ref": "geoJsonData.json"
+		}
+	}
+}

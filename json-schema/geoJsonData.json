@@ -1,0 +1,54 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://www.usda.gov/data_standards/v0.9/schema/geoJsonData.json#",
+	"title": "ACRSI Data Submission",
+	"description": "",
+	"type": "object",
+	"required": [
+		"farm",
+		"customer",
+		"cropYear"
+	],
+	"properties": {
+		"@type": {
+			"title": "Metadata Context",
+			"description": "IRI for the JSON-LD data type. This should be ag:Farm",
+			"enum": [
+				"geoJson",
+			]
+		},
+		"type": {
+			"title": "Type",
+			"enum":[
+				"Feature"
+			]
+		},
+		"geometry": {
+		   "type": "object"
+		   "properties": {
+		      "type": {
+		      
+		      },
+		      "coordinates":{
+		      	"type": "array"
+		      	"items": "integer"
+		      }
+		   }
+		   
+		}
+		"properties": {
+			"properties": {
+				"name":{
+					"title": "Name",
+					"description": "The name of the geoJson property"
+			}
+		
+		}
+		
+		
+		"cropYear": {
+			"title": "Crop Year",
+			"description": "crop year description"
+		}
+	}
+}

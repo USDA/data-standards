@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="US-ASCII"?>
+<xs:schema targetNamespace="http://release.niem.gov/niem/niem-core/3.0/" version="1" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/3.0/ ../../appinfo/3.0/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../../conformanceTargets/3.0/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/3.0/#ReferenceSchemaDocument" xmlns:census="http://release.niem.gov/niem/codes/census_uscounty/3.0/" xmlns:niem-xs="http://release.niem.gov/niem/proxy/xsd/3.0/" xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/" xmlns:structures="http://release.niem.gov/niem/structures/3.0/" xmlns:appinfo="http://release.niem.gov/niem/appinfo/3.0/" xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fips_5-2="http://release.niem.gov/niem/codes/fips_5-2/3.0/">
+	<xs:annotation>
+    <xs:documentation>NIEM Core.</xs:documentation>
+  </xs:annotation>
+  <xs:import schemaLocation="../../codes/census_uscounty/3.0/census_uscounty.xsd" namespace="http://release.niem.gov/niem/codes/census_uscounty/3.0/"/>
+  <xs:import schemaLocation="../../codes/fips_5-2/3.0/fips_5-2.xsd" namespace="http://release.niem.gov/niem/codes/fips_5-2/3.0/"/>
+  <xs:import schemaLocation="../../proxy/xsd/3.0/xs.xsd" namespace="http://release.niem.gov/niem/proxy/xsd/3.0/"/>
+  <xs:import schemaLocation="../../structures/3.0/structures.xsd" namespace="http://release.niem.gov/niem/structures/3.0/"/>
+  <xs:complexType name="PersonNameTextType">
+    <xs:annotation>
+      <xs:documentation>A data type for a name by which a person is known, referred, or addressed.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="nc:ProperNameTextType"/>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="ProperNameTextType">
+    <xs:annotation>
+      <xs:documentation>A data type for a word or phrase by which a person or thing is known, referred, or addressed.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="nc:TextType"/>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="TextType">
+    <xs:annotation>
+      <xs:documentation>A data type for a character string.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="niem-xs:string"/>
+    </xs:simpleContent>
+  </xs:complexType>
+	<xs:complexType name="DateType">
+		<xs:annotation>
+			<xs:documentation>A data type for a calendar date.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="structures:ObjectType"/>
+		</xs:complexContent>
+	</xs:complexType>
+  <xs:element name="LocationCounty" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a county, parish, vicinage, or other such geopolitical subdivision of a state.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="LocationCountyCode" type="census:USCountyCodeType" substitutionGroup="nc:LocationCounty" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A county, parish, vicinage, or other such geopolitical subdivision of a state.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="LocationCountyName" type="nc:ProperNameTextType" substitutionGroup="nc:LocationCounty" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A name of a county, parish, vicinage, or other such geopolitical subdivision of a state.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="LocationState" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a state, commonwealth, province, or other such geopolitical subdivision of a country.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="LocationStateFIPS5-2AlphaCode" type="fips_5-2:USStateCodeType" substitutionGroup="nc:LocationState">
+    <xs:annotation>
+      <xs:documentation>A state, commonwealth, province, or other such geopolitical subdivision of a country.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="LocationStateFIPS5-2NumericCode" type="fips_5-2:USStateNumericCodeType" substitutionGroup="nc:LocationState" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A state, commonwealth, province, or other such geopolitical subdivision of a country.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="OrganizationName" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A name of an organization.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PersonGivenName" type="nc:PersonNameTextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A first name of a person.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PersonMiddleName" type="nc:PersonNameTextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A middle name of a person.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PersonNameSuffixText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A term appended after the family name that qualifies the name.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PersonSurName" type="nc:PersonNameTextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A last name or family name of a person.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+	<xs:element name="AreaRegion" abstract="true">
+		<xs:annotation>
+			<xs:documentation>A data concept for a location identified by geographic boundaries.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="LocationAugmentationPoint" abstract="true">
+		<xs:annotation>
+			<xs:documentation>An augmentation point for LocationType.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="LocationGeospatialCoordinate" abstract="true">
+		<xs:annotation>
+			<xs:documentation>A data concept for a geospatial location.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

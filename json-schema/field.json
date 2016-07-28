@@ -1,0 +1,51 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "http://localhost:4000/json-schema/field.json#",
+	"title": "ACRSI Data Submission",
+	"description": "",
+	"type": "object",
+	"required": [
+		"fieldNumber",
+		"cluIdentifier",
+		"cluProducerReviewRequestIndicator",
+		"agriculturalProductionPlan"
+	],
+	"properties": {
+		"@type": {
+			"title": "Metadata Context",
+			"description": "IRI for the JSON-LD data type.",
+			"enum": [
+				"ag:Field"
+			]
+		},
+		"fieldNumber": {
+			"title": "Field Number",
+			"description": "The identification number assigned to a field of land that is part of a farm tract.<br/>Field numbers are assigned by an FSA county office, and are unique within that office's farms. A Field Number is used in conjunction with Tract Number, State FSA Code and County FSA Code for uniqueness. Field number and Tract Number are not necessarily unique based upon State ANSI Code and County ANSI Code in instances where the ANSI codes are not the same as the FSA codes.",
+			"type": "string",
+			"minLength": 1,
+			"maxLength": 7
+		},
+		"cluIdentifier": {
+			"title": "CLU Identifier",
+			"description": "The identification number assigned to a field of land that is part of a farm tract.<br/>Field numbers are assigned by an FSA county office, and are unique within that office's farms. A Field Number is used in conjunction with Tract Number, State FSA Code and County FSA Code for uniqueness. Field number and Tract Number are not necessarily unique based upon State ANSI Code and County ANSI Code in instances where the ANSI codes are not the same as the FSA codes.",
+			"type": "string",
+			"minLength": 1,
+			"maxLength": 7
+		},
+		"cluProducerReviewRequestIndicator": {
+			"title": "CLU Producer Review Request Indicator",
+			"description": "Indicates that the producer has requested that a Common Land Unit (CLU) be reviewed.<br/>Y =Yes<br/>N = No",
+			"type": "string",
+			"minLength": 1,
+			"maxLength": 1
+		},
+		"agriculturalProductionPlan": {
+			"type": "array",
+			"items": {
+				"$ref": "agriculturalProductionPlan.json",
+				"minItems": 1,
+               "uniqueItems": true
+			}
+		}
+	}
+}

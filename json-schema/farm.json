@@ -1,0 +1,51 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "http://localhost:4000/json-schema/farm.json#",
+	"title": "This is the Farm element",
+	"description": "",
+	"type": "object",
+	"required": [
+		"administrativeStateFsaCode",
+		"administrativeCountyFsaCode",
+		"farmNumber",
+		"tract"
+	],
+	"properties": {
+		"@type": {
+			"title": "Metadata Context",
+			"description": "IRI for the JSON-LD data type.",
+			"enum": [
+				"ag:Farm"
+			]
+		},
+		"administrativeStateFsaCode": {
+			"title": "Administrative State Fsa Code",
+			"description": "State code of administering state office. <br/>State code used within the Farm Service Agency (FSA) to identify a state within the United States, United States Possessions, freely associated areas of the United States, or a combination thereof as defined within Handbook 1-CM, Exhibit 100.<br/>Many of the code values used by are similar to State ANSI/FIPS Code, which follows the American National Standards Institute (ANSI) numeric INCITS 31-2009 and Federal Information Processing Standards Publications (FIPS Pub) 6-4 standard. In some cases FSA codes are different from the ANSI/FIPS codes.  Specific values are documented in the Handbook 1-CM, Exhibit 100.",
+			"type": "string",
+			"minLength": 2,
+			"maxLength": 2
+		},
+		"administrativeCountyFsaCode": {
+			"title": "Administrative County Fsa Code",
+			"description": "County code of the administering county office.<br/>The code is used within the Farm Service Agency (FSA) to identify a county, equivalent entity, or combination thereof within the United States, its possessions, and associated areas as defined within Handbook 1-CM, Exhibit 100.<br/>Many of the code values used by are similar to County ANSI/FIPS Code, which follows the American National Standards Institute (ANSI) numeric INCITS 31-2009 and Federal Information Processing Standards Publications (FIPS Pub) 6-4 standard. The expanded even-numbered FSA codes identify counties that contain more than one office due to geographic considerations.<br/>Specific values are documented in Handbook 1-CM.",
+			"type": "string",
+			"minLength": 3,
+			"maxLength": 3
+		},
+		"farmNumber": {
+			"title": "Farm Number",
+			"description": "An identification number assigned to all land under control of a particular operator within a particular county.<br/>Each County assigns Farm Numbers independently. As a result, farms in different counties might be assigned the same Farm Number; i.e, a Farm Number might be unique only within a particular county. Thus, to uniquely identify a farm, the State FSA Code and County FSA Code must be specified in combination with the Farm Number.",
+			"type": "string",
+			"minLength": 1,
+			"maxLength": 7
+		},
+		"tract": {
+		    "type": "array",
+		    "items":{
+				"$ref": "tract.json",
+				"minItems": 1,
+               "uniqueItems": true
+			}
+		}
+	}
+}

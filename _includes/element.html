@@ -1,0 +1,87 @@
+{% for data_element in site.data.acrsi-data-elements.data_elements %}
+{% if page.element_name == data_element.json_name %}
+
+<h2>{{ data_element.name }} Profile</h2>
+
+<table><tr><td>{{ data_element.definition }}</td></tr></table>
+
+{% if data_element.enumeration %}
+<table class="table table-striped">
+<thead><tr><th scope='col'>Value Item</th>
+<th scope='col'>Value Meaning</th></tr></thead>
+   {% for enumeration_element in data_element.enumeration %}
+      <tr>
+         <td>{{ enumeration_element.value_item }}</td>
+         <td>{{ enumeration_element.value_definition}}</td>
+      </tr>
+   {% endfor %}
+</table>
+{% endif %}
+<table class="table table-striped">
+   <thead>
+      <tr>
+          <th>Property</th>
+          <th>Definition</th>
+      </tr>
+    </thead>
+      {% if data_element.data_element_example %}
+         <tr><td>Example</td>
+         <td>{{ data_element.data_element_example }}</td>
+      </tr>
+      {% endif %}
+      <tr>
+         <td>Data Type Code</td>
+         <td>{{ data_element.data_type_code }}</td>
+      </tr>
+      {% if data_element.min_length %}
+      <tr>
+         <td>Minimum Length Number</td>
+         <td>{{ data_element.min_length }}</td>
+      </tr>
+      {% endif %}
+      {% if data_element.max_length %}
+      <tr>
+         <td>Maximum Length Number</td>
+         <td>{{ data_element.max_length }}</td>
+      </tr>
+      {% endif %}
+      {% if data_element.pattern %}
+      <tr>
+         <td>Pattern</td>
+         <td>{{ data_element.pattern }}</td>
+      </tr>
+      {% endif %}
+      {% if data_element.precision%}
+      <tr>
+         <td>Decimal Precision</td>
+         <td>{{ data_element.precision }}</td>
+      </tr>
+      {% endif %}
+
+</table>
+
+{% if data_element.business_rules %}
+**Business Rules**
+<table class="table table-striped">
+<thead><tr><th scope='col'>Source</th>
+<th scope='col'>Description</th></tr></thead>
+   {% if data_element.obligation_code %}
+       <tr>
+         <td>Acreage Crop Reporting</td>
+         <td>This field is {{ data_element.obligation_code }}</td>
+      </tr>
+   {% endif %}
+   {% for business_rule in data_element.business_rules %}
+      <tr>
+         <td>{{ business_rule.source }}</td>
+         <td>{{ business_rule.description}}</td>
+      </tr>
+   {% endfor %}
+  
+</table>
+{% endif %}
+
+{% endif %}
+{% endfor %}
+
+

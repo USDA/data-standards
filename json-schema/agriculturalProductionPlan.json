@@ -1,0 +1,211 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "http://localhost:4000/json-schema/agriculturalProductionPlan.json#",
+	"title": "ACRSI Data Submission",
+	"description": "",
+	"type": "object",
+	"required": [
+		"stateAnsiCode",
+		"countyAnsiCode",
+		"coreProductCode",
+		"coreProductTypeCode",
+		"irrigationPracticeCode",
+		"organicPracticeTypeCode",
+		"croppingPracticeCode",
+		"producerShare",
+		"geospatialMetadata"
+	],
+	"properties": {
+		"@type": {
+			"title": "Metadata Context",
+			"description": "IRI for the JSON-LD data type. ",
+			"enum": [
+				"ag:AgriculturalProductionPlan"
+			]
+		},
+		"stateAnsiCode": {
+			"title": "State ANSI Code",
+			"description": "A code defined within the American National Standards Institute (ANSI) numeric INCITS 38-2009 standard for a state within the United States, a United States possession, freely associated area of the United States, or combination thereof.",
+			"type": "string",
+			"minLength": 2,
+			"maxLength": 2
+		},
+		"countyAnsiCode": {
+			"title": "County ANSI Code",
+			"description": "A code defined within the American National Standards Institute (ANSI) numeric INCITS 31-2009 standard to identify a county or equivalent entity within the United States, its possessions, and associated areas. A County ANSI Code is unique only when associated with the state or equivalent entity of the United States in which the county is physically located.",
+			"type": "string",
+			"minLength": 3,
+			"maxLength": 3
+		},
+		"subfieldNumber": {
+			"title": "Subfield Number",
+			"description": "An alpha 'number' that is used to uniquely identify a subfield within a field, within a tract within a farm within a state and county. Subfields are areas of a field that share a set of common planting characteristic in terms of crop, crop type, intended use, etc. By convention the first defined subfield is given a value of 'A', with subsequent subfields following in alphabetic order.",
+			"type": "string",
+			"minLength": 2,
+			"maxLength": 2
+		},
+		"coreProductCode": {
+			"title": "Core Product Code",
+			"description": "Code providing a classification of agricultural products defined by the Pilot CVT (Crop Validation Table). Products are classified into individual crop and commodity types, tree types, and types of livestock.",
+			"type": "string",
+			"minLength": 2,
+			"maxLength": 2
+		},
+		"coreProductTypeCode": {
+			"title": "Core Product Type Code",
+			"description": "Code providing a subclassification of agricultural products in addition to the main classification provided by the Core Product Code. Each product classified by a Core Product Code is also assigned a Core Product Type Code providing greater clarification of the crop/commodity, tree, livestock, etc. Codes are maintained by the Pilot CVT (Crop Validation Table).",
+			"type": "string",
+			"minLength": 4,
+			"maxLength": 4
+		},
+		"productIntendedUseCode": {
+			"title": "Product Intended Use Code",
+			"description": "Code identifying the intended use for an agricultural product such as a crop/commodity, tree, livestock, etc. Codes for intended uses are specific to a particular combination of Core Product Code and Core Product Type Code and are maintained by the Pilot CVT.",
+			"type": "string",
+			"minLength": 4,
+			"maxLength": 4
+		},
+		"originalReportedAcreage": {
+			"title": "Original Reported Acreage",
+			"description": "The original, unmodified, number of acres that were reported.",
+			"type": "string",
+			"minLength": 0,
+			"maxLength": 8
+		},
+		"finalReportedAcreage": {
+			"title": "Final Reported Acreage",
+			"description": "The final number of acres that were reported.",
+			"type": "string",
+			"minLength": 0,
+			"maxLength": 8
+		},
+		"reportedAcreageModifiedIndicator": {
+			"title": "Reported Acreage Modified Indicator",
+			"description": "Indicates whether the reported acreage was modified from its original value. Y = Yes N = No",
+			"type": "string",
+			"minLength": 1,
+			"maxLength": 1
+		},
+		"reportedAcreageModifiedReasonCode": {
+			"title": "Reported Acreage Modified Reason Code",
+			"description": "Code identifying the reason that the reported acreage was modified from its original value.<br/>G = GPS Issue<br/>C = Corrected Acres<br/>MD = Missing Data<br/>O = Other",
+			"enum": [
+				"G",
+				"C",
+				"MD",
+				"O"
+			],
+			"type": "string",
+			"minLength": 1,
+			"maxLength": 2
+		},
+		"reportedAcreageModifiedOtherReasonText": {
+			"title": "Reported Acreage Modified Other Reason Text",
+			"description": "Freeform text providing the reason that a acreage was modified from its original value when a reason other than the possible list of provided reasons is needed.",
+			"type": "string",
+			"minLength": 1,
+			"maxLength": 80
+		},
+		"acreageCalculationProjectionCode": {
+			"title": "Acreage Calculation Projection Code",
+			"description": "Code identifying the geospatial projection standard used for calculating acreage.",
+			"type": "string",
+			"minLength": 4,
+			"maxLength": 8
+		},
+		"originalPlantedDate": {
+			"title": "Original Planted Date",
+			"description": "The original value for the date that a specific crop was planted.",
+			"type": "string",
+			"minLength": 10,
+			"maxLength": 10
+		},
+		"finalPlantedDate": {
+			"title": "Final Planted Date",
+			"description": "The final value for the date that a specific crop was planted.",
+			"type": "string",
+			"minLength": 10,
+			"maxLength": 10
+		},
+		"plantedDateModifiedIndicator": {
+			"title": "Planted Date Modified Indicator",
+			"description": "Indicates whether the planted date was modified from its original value.",
+			"type": "string",
+			"minLength": 1,
+			"maxLength": 1
+		},
+		"plantedDateModifiedReasonCode": {
+			"title": "Planted Date Modified Indicator",
+			"description": "Code identifying the reason that a planted date was modified from its original value.<br/>MP = Multiple Planting Dates<br/>C = Correction<br/>O = Other",
+			"enum": [
+				"MP",
+				"C",
+				"O"
+			],
+			"type": "string",
+			"minLength": 1,
+			"maxLength": 2
+		},
+		"plantedDateModifiedOtherReasonText": {
+			"title": "Planted Date Modified Other Reason Text",
+			"description": "Freeform text providing the reason that a planted date was modified from its original value when a reason other than the possible list of provided reasons is needed.",
+			"type": "string",
+			"minLength": 1,
+			"maxLength": 80
+		},
+		"productPlantingCode": {
+			"title": "Product Planting Code",
+			"description": "Code identifying the planting of a product/crop as either conventional (planted as normal or no planting required) or unconventional/irregular in a predefined way.<br/>F- Failed Acreage (acreage that was timely planted with the intent to harvest, but because of disaster related conditions, the crop failed before it could be brought to harvest).<br/>P- Prevented Planted (the inability to plant the intended crop acreage with proper equipment by the final planting date for the crop type because of a natural disaster). <br/>V-  Volunteer. A crop that was planted in a previous crop year on the applicable acreage or drifted from other acreage, successfully self-seeded, and is growing this crop year on the applicable acreage without being intentionally sown or managed.",
+			"enum": [
+				"F",
+				"P",
+				"V"
+			],
+			"type": "string",
+			"minLength": 1,
+			"maxLength": 1
+		},
+		"irrigationPracticeCode": {
+			"title": "Irrigation Practice Code",
+			"description": "Code identifying the irrigation practice used for a unit of land with a crop.<br/>Irrigated Practice is the method of producing a crop by which water, from an adequate water source, is artificially applied in sufficient amounts by appropriate and adequate irrigation equipment and facilities and at the proper times necessary to produce one of the following:<br/>1. the yield expected for the area;<br/>2. the yield used to establish the production guarantee or amount of insurance/coverage on the irrigated acreage planted to the commodity;<br/>3. the producer’s established approved yield, as applicable. <br/>Acreage adjacent to water, such as but not limited to a pond, lake, river, stream, creek or brook, shall not be considered irrigated based solely on the proximity to the water.<br/>I = Irrigated<br/>N = Non-Irrigated",
+			"enum": [
+				"I",
+				"N"
+			],
+			"type": "string",
+			"minLength": 1,
+			"maxLength": 1
+		},
+		"organicPracticeTypeCode": {
+			"title": "Organic Practice Type Code",
+			"description": "A code representing the type of certification for farm acreage in regards to a system/plan of production and handling practice to produce an organic commodity.<br/>Organic practice that is Certified means a system/plan of production and handling practices to respond to site-specific conditions by integrating cultural, biological, and mechanical practices that foster cycling of resources, promote ecological balance, and conserve biodiversity, is certified by an accredited certifying agent, and used to produce an organic commodity or product according to the Organic Foods Production Act of 1990. <br/>Organic practice that is Transitional means a system/plan of production and handling practices to produce an organic commodity or product in accordance with the Organic Foods Production Act of 1990, but has not yet qualified to be designated as certified organic.<br/>N - Not Specified (Conventional)<br/>OC - Organic (USDA Certified)  <br/>OT - Organic (Transitional)  ",
+			"enum": [
+				"N",
+				"OC",
+				"OT"
+			],
+			"type": "string",
+			"minLength": 1,
+			"maxLength": 1
+		},
+		"croppingPracticeCode": {
+			"title": "Cropping Practice Code",
+			"description": "A code identifying the cropping practice applicable for a reported crop/commodity on a field/subfield.",
+			"type": "string",
+			"minLength": 1,
+			"maxLength": 99
+		},
+		"producerShare": {
+		    "type": "array",
+		    "items": {
+				"$ref": "producerShare.json",
+				"minItems": 1,
+       			"uniqueItems": true
+			}
+		},
+		"geospatialMetadata": {
+			"$ref": "geospatialMetadata.json"
+		}
+		
+	}
+}
