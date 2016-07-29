@@ -22,7 +22,7 @@ Email <a href="mailto:enterprise.architecture@ocio.usda.gov">the USDA Data Stand
 ### Easy
 
 1. Browse the content at http://usda.github.io/data-standards
-2. Click the "Improve this content" button in the top right corner of any page
+2. Click "Improve Content" in the bottom left corner of any page
 3. Make changes as you would normally
 4. Click "Submit".
 5. You change should appear once approved.
