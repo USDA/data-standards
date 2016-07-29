@@ -11,7 +11,7 @@ This is the official site for distributing common USDA Data Standards and data e
 The first subdomain is in support of USDA's <a href="about-acrsi.html">Acreage and Crop Reporting and Streamline Initiative (ACRSI) project</a> which 
 has standard data elements and data specification that can be viewed <a href="data-elements/index.html">here</a>.
 
-USDA is following the best practices and guidances from
+USDA is following the best practices and guidance from
 the National Information Exchange Model (NIEM) in establishing this emerging domain.
 
 USDA has also set this page up for collaboration and USDA welcomes your feedback in ensuring
