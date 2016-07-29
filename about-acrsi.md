@@ -268,7 +268,7 @@ The generated XML schemas are checked for conformance both manually and through 
 * The use of Schematron language to check against the latest version of the NIEM NDR.  
 * Provides a summary report that contains a list   
 
-## IEPD Artificats
+## IEPD Artifacts
 
 1.	**Wantlist**
 An XML document that specifies what components you want from the NIEM data model.
