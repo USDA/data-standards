@@ -12,7 +12,7 @@ The first subdomain is in support of USDA's <a href="about-acrsi.html">Acreage a
 has standard data elements and data specification that can be viewed <a href="data-elements/index.html">here</a>.
 
 USDA is following the best practices and guidance from
-the National Information Exchange Model (NIEM) in establishing this emerging domain.
+the National Information Exchange Model (NIEM) as it pursues becoming a NIEM domain.
 
 USDA has also set this page up for collaboration and USDA welcomes your feedback in ensuring
 we create complete, full-described data standards for interfacing with USDA.
