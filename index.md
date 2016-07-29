@@ -4,7 +4,7 @@ layout: home
 
 
 
-This is the official site for distributing common USDA Data Standards for Food, Farms and Forests data elements. 
+This is the official site for distributing common USDA Data Standards and data elements in support of Food, Farms, Forests and Families. 
 
 ![USDA Future State Diagram:  This shows the relationship between USDA Customers, USDA Programs, Statistical Agencies and Open Data.  An ideal future state has common elements to make sharing data more efficient.](Common_Elements.png)
 
@@ -15,7 +15,7 @@ USDA is following the best practices and guidances from
 the National Information Exchange Model (NIEM) in establishing this emerging domain.
 
 USDA has also set this page up for collaboration and USDA welcomes your feedback in ensuring
-we create complete, full-described standards for interfacing with USDA.
+we create complete, full-described data standards for interfacing with USDA.
 
 This collaboration site is intended:  
 
