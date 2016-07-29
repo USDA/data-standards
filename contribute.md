@@ -7,7 +7,7 @@ title: Contribute
 
 To quickly start contributing, review issues <a href="https://github.com/{{ site.org_name }}/{{ site.repo_name }}/issues">here</a>
 
-*By contributing to this project, you dedicate your work to the public domain and relinquish any copyright claims under the terms of the [CC0 Public Domain Dedication](http://creativecommons.org/publicdomain/zero/1.0/). See the [license file](https://github.com/fedspendingtransparency/fedspendingtransparency.github.io/blob/master/LICENSE) for additional information.*
+*By contributing to this project, you dedicate your work to the public domain and relinquish any copyright claims under the terms of the [CC0 Public Domain Dedication](http://creativecommons.org/publicdomain/zero/1.0/). See the [license file](https://github.com/USDA/data-standards/blob/gh-pages/LICENSE) for additional information.*
 
 ## How to Contribute
 
@@ -42,7 +42,7 @@ Email <a href="mailto:enterprise.architecture@ocio.usda.gov">the USDA Data Stand
 
 USDA Data Standards runs on GitHub pages and automatically regenerates as a static site after every change. To duplicate this process and preview changes locally:
 
-1. `git clone https://github.com/usda/data-standards.github.io.git && cd usda.github.io`
+1. `git clone https://github.com/usda/data-standards.git && cd data-standards`
 2. `script/bootstrap`
 3. (Make your changes)
 4. `script/server`
