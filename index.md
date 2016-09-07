@@ -4,7 +4,7 @@ layout: home
 
 
 
-This is the official site for distributing common USDA Data Standards and data elements in support of Food, Farms, Forests and Families. 
+This is the official site for distributing common USDA data standards and data elements in support of Food, Farms, Forests, and Families. 
 
 ![USDA Future State Diagram:  This shows the relationship between USDA Customers, USDA Programs, Statistical Agencies and Open Data.  An ideal future state has common elements to make sharing data more efficient.](Common_Elements.png)
 
