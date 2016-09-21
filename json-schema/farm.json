@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "http://localhost:4000/json-schema/farm.json#",
+	"id": "https://github.com/USDA/data-standards/blob/json-updates/json-schema/farm.json#",
 	"title": "This is the Farm element",
 	"description": "",
 	"type": "object",

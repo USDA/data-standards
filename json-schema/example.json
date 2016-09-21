@@ -1,5 +1,5 @@
 {
-   "@context": "http://localhost:4000/json-schema/acrsi_submission.json#",
+   "@context": "https://github.com/USDA/data-standards/blob/json-updates/json-schema/AcreageSubmission.json#",
    "@type": "ag:ACRSI_Submission",
    "cropYear": "2016",
    "originatorIdentification": "123456",
