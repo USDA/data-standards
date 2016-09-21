@@ -35,9 +35,7 @@
 		"cluProducerReviewRequestIndicator": {
 			"title": "CLU Producer Review Request Indicator",
 			"description": "Indicates that the producer has requested that a Common Land Unit (CLU) be reviewed.<br/>Y =Yes<br/>N = No",
-			"type": "string",
-			"minLength": 1,
-			"maxLength": 1
+			"type": "boolean"
 		},
 		"agriculturalProductionPlan": {
 			"type": "array",

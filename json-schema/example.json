@@ -14,14 +14,14 @@
          {
             "fieldNumber": "1234567",
          	"cluIdentifier": "1234567",
-         	"cluProducerReviewRequestIndicator": "Y",
+         	"cluProducerReviewRequestIndicator": true,
          	"agriculturalProductionPlan": [{
          		"stateAnsiCode": "dc",
          		"countyAnsiCode": "abc",
          		"coreProductCode": "12",
          		"coreProductTypeCode": "1234",
          		"irrigationPracticeCode": "I",
-         		"organicPracticeTypeCode": "N",
+         		"organicPracticeTypeCode": "OC",
          		"croppingPracticeCode": "123",
          		"producerShare":[
          		 	{
@@ -33,7 +33,7 @@
          			"geospatialShapeProcessDate": "20150405",
          			"micsCode": "AG",
          			"geospatialSourceDataCreationDate": "2015-04-05T10:00S12:",
-         			"precisionAgriculturalSubMeterAccuracyIndicator": "Y"
+         			"precisionAgriculturalSubMeterAccuracyIndicator": false
          		}
          	}]
          }]
