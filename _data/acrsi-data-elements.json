@@ -149,7 +149,7 @@
 			"source": "Acreage Crop Reporting",
 			"data_type_code": "Integer",
 			"min_length": 1,
-			"max_length": 7,
+			"max_length": 36,
 			"obligation_code": "Mandatory",
 			"data_element_example": "c2e455c0-7214-4e40-8e08-edfb4e48cbef",
 			"representation_class": "Identifier",
