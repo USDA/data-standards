@@ -42,7 +42,7 @@
 		"tract": {
 		    "type": "array",
 		    "items":{
-				"$ref": "tract.json",
+				"$ref": "tract.json#",
 				"minItems": 1,
                "uniqueItems": true
 			}

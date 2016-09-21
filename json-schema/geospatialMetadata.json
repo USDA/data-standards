@@ -36,9 +36,7 @@
 		"geospatialShapeModifiedIndicator": {
 			"title": "Geospatial Shape Modified Indicator",
 			"description": "Indicates whether the geospatial shape/polygon was modified from its original value. Y =Yes N = No",
-			"type": "string",
-			"minLength": 1,
-			"maxLength": 1
+			"type": "boolean",
 		},
 		"geospatialShapeModifiedReasonCode": {
 			"title": "Geospatial Shape Modified Reason Code",
@@ -116,9 +114,7 @@
 		"precisionAgriculturalSubMeterAccuracyIndicator": {
 			"title": "Precision Agricultural Sub Meter Accuracy Indicator",
 			"description": "Indicates whether geospatial data collected from Precision Agriculture technology has horizontal coordinate measurements that are accurate within a sub meter.  Y =Yes N = No",
-			"type": "string",
-			"minLength": 1,
-			"maxLength": 1
+			"type": "boolean",
 		},
 		"geoJson": {
 			"$ref": "geoJsonData.json"

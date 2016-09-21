@@ -130,9 +130,7 @@
 		"plantedDateModifiedIndicator": {
 			"title": "Planted Date Modified Indicator",
 			"description": "Indicates whether the planted date was modified from its original value.",
-			"type": "string",
-			"minLength": 1,
-			"maxLength": 1
+			"type": "boolean",
 		},
 		"plantedDateModifiedReasonCode": {
 			"title": "Planted Date Modified Indicator",
