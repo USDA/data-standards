@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://github.com/USDA/data-standards/blob/json-updates/json-schema/customer.json#",
+	"id": "https://usda.github.io/data-standards/json-schema/customer.json#",
 	"title": "ACRSI Data Submission",
 	"description": "",
 	"type": "object",
