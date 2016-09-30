@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+   <url>
+      <loc>https://usda.github.io/data-standards/index.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+   <url>
+      <loc>https://usda.github.io/data-standards/data-elements/index.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+   <url>
+      <loc>https://usda.github.io/data-standards/data-exchange.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+   <url>
+      <loc>https://usda.github.io/data-standards/contribute.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+</urlset> 
