@@ -15,7 +15,7 @@ To quickly get started, here are links to the [Proposed XML Schema](https://gith
 [Proposed JSON Schema](https://github.com/USDA/data-standards/tree/gh-pages/json-schema), [Examples](https://github.com/USDA/data-standards/tree/gh-pages/json-schema), 
 [Acreage Crop Reporting Business Rules](data-elements/business_rules.html), and [XML - JSON Mappings](#xml_json)      
 
-![Use Case 1](use-case-1.png)
+![Use Case 1](assets/img/use-case-1.png)
 
 * [Overview](#Background)      
 * [Use Cases](#use_cases)    
@@ -64,18 +64,18 @@ the three cases.
 file through ACRSI Data Upload UI. Or the Producer could visit the County Office and provide the data file for 
 the County Office to upload it through the same ACRSI Data Upload UI.
 
-![Use Case 1](use-case-1.png)
+![Use Case 1](assets/img/use-case-1.png)
 
 **Use Case 2:** Producer visits Insurance Agent and provides acreage data. Insurance Agent enters data through AIP system,
 which then transforms the data into the specified standard, and sends it to USDA system.
  
-![Use Case 2](use-case-2.png)
+![Use Case 2](assets/img/use-case-2.png)
 
 **Use Case 3:** Producer or Representative provides acreage data to County Office Staff. The staff enters data through 
 USDA CARS system, which then generates and transform the data into the specified standard, and sends it to 
 USDA system.
 
-![Use Case 3](use-case-3.png)
+![Use Case 3](assets/img/use-case-3.png)
 
 
 <a name="data_exchange"/>
@@ -194,7 +194,7 @@ Pilot Crops / Commodities (not validated by File Upload)
 Below is the business process diagram that depicts the interactions among the different actors in 
 regards to ACRSI data exchange that is submitted by Producer or County Office.
 
-![Business Process Diagram](business_process.png)
+![Business Process Diagram](assets/img/business_process.png)
 
 The above business process diagram is a simplified version derived from the following 
 “ACRSI Conceptual Architecture” 3 use cases focusing on ACRSI Data Exchange file.
@@ -205,7 +205,7 @@ The above business process diagram is a simplified version derived from the foll
 
 Below is the Exchange Content Model for USDA ACRSI:
 
-![Business Process Diagram](content_model.png)
+![Business Process Diagram](assets/img/content_model.png)
 
 <a name="development_methodology"/>
 
@@ -228,7 +228,7 @@ specify the followings:
 USDA follows the recommended NIEM Development methodologies using various tools as recommended while 
 conforming to USDA IT Development team tools as depicted below:
 
-![NIEM Process](niem_process.png)
+![NIEM Process](assets/img/niem_process.png)
 
 The high-level methodologies utilized during the development are:  
 
