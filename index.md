@@ -8,7 +8,7 @@ This is the official site for distributing common USDA data standards and data e
 
 ![USDA Future State Diagram:  This shows the relationship between USDA Customers, USDA Programs, Statistical Agencies and Open Data.  An ideal future state has common elements to make sharing data more efficient.](assets/img/ag_domain_logo.png)
 
-The first subdomain is in support of USDA's <a href="about-acrsi.html">Acreage and Crop Reporting and Streamline Initiative (ACRSI) project</a> which 
+The first subdomain is in support of USDA's <a href="data-exchange.html">Acreage and Crop Reporting and Streamline Initiative (ACRSI) project</a> which 
 has standard data elements and data specification that can be viewed <a href="data-elements/index.html">here</a>.
 
 USDA is following the best practices and guidance from
